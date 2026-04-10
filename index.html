@@ -1,6 +1,6 @@
 ---
 layout: page
-description: "Research, publications, projects, videos, and academic notes"
+description: "Robotics portfolio, project experience, honors, and academic notes"
 header-img: "img/home-bg-art.jpg"
 header-mask: 0.35
 no-catalog: true
@@ -9,9 +9,10 @@ no-catalog: true
 {% assign academic = site.data.academic %}
 {% assign profile = academic.profile %}
 {% assign bio = academic.bio %}
-{% assign publications = academic.publications %}
+{% assign awards = academic.awards %}
 {% assign projects = academic.projects %}
-{% assign videos = academic.videos %}
+{% assign summary = academic.summary %}
+{% assign contacts = academic.contacts %}
 
 <div class="home-academic">
   <section class="academic-hero-card">
@@ -29,7 +30,7 @@ no-catalog: true
       </div>
       <div class="academic-action-row">
         <a class="academic-button academic-button-primary" href="{{ profile.cv_path | prepend: site.baseurl }}">Download CV</a>
-        <a class="academic-button" href="{{ '/research/' | prepend: site.baseurl }}">Explore Research</a>
+        <a class="academic-button" href="{{ '/research/' | prepend: site.baseurl }}">View Projects</a>
       </div>
     </div>
     <div class="academic-hero-media">
@@ -54,8 +55,8 @@ no-catalog: true
 
   <section class="academic-section">
     <div class="academic-section-heading">
-      <h2>Research Interests</h2>
-      <a href="{{ '/research/' | prepend: site.baseurl }}">View Details</a>
+      <h2>Technical Highlights</h2>
+      <a href="{{ '/about/' | prepend: site.baseurl }}">View Details</a>
     </div>
     <div class="row">
       <div class="col-md-6">
@@ -79,23 +80,15 @@ no-catalog: true
 
   <section class="academic-section">
     <div class="academic-section-heading">
-      <h2>Selected Publications</h2>
-      <a href="{{ '/publications/' | prepend: site.baseurl }}">All Publications</a>
+      <h2>Honors & Awards</h2>
+      <a href="{{ '/publications/' | prepend: site.baseurl }}">View Honors</a>
     </div>
     <div class="academic-grid">
-      {% for item in publications limit:3 %}
+      {% for item in awards limit:3 %}
       <article class="academic-card">
-        <p class="academic-card-meta">{{ item.venue }} · {{ item.year }}</p>
-        <h3>{{ item.title_en }}</h3>
-        <p>{{ item.abstract_en }}</p>
-        <p class="academic-meta">{{ item.authors }}</p>
-        {% if item.links %}
-        <div class="academic-link-row">
-          {% for link in item.links %}
-          <a href="{{ link.url | prepend: site.baseurl }}">{{ link.label }}</a>
-          {% endfor %}
-        </div>
-        {% endif %}
+        <p class="academic-card-meta">{{ item.year }}</p>
+        <h3>{{ item.title_en }} / {{ item.title_zh }}</h3>
+        <p>{{ item.meta_en }}</p>
       </article>
       {% endfor %}
     </div>
@@ -103,15 +96,15 @@ no-catalog: true
 
   <section class="academic-section">
     <div class="academic-section-heading">
-      <h2>Projects</h2>
-      <a href="{{ '/research/' | prepend: site.baseurl }}">Research Page</a>
+      <h2>Project Experience</h2>
+      <a href="{{ '/research/' | prepend: site.baseurl }}">All Projects</a>
     </div>
     <div class="academic-grid">
       {% for item in projects limit:3 %}
       <article class="academic-card">
         <h3>{{ item.name_en }}</h3>
         <p>{{ item.description_en }}</p>
-        <p class="academic-meta">{{ item.related_publication }}</p>
+        <p class="academic-meta">{{ item.period_en }} · {{ item.related_publication }}</p>
         {% if item.links %}
         <div class="academic-link-row">
           {% for link in item.links %}
@@ -126,31 +119,29 @@ no-catalog: true
 
   <section class="academic-section">
     <div class="academic-section-heading">
-      <h2>Talks & Videos</h2>
-      <a href="{{ '/videos/' | prepend: site.baseurl }}">Video Library</a>
+      <h2>Contact & Summary</h2>
+      <a href="{{ '/videos/' | prepend: site.baseurl }}">View Profile</a>
     </div>
     <div class="academic-grid">
-      {% for item in videos limit:2 %}
-      <article class="academic-card academic-video-card">
-        {% if item.file != "" %}
-        <video controls preload="none" poster="{{ item.poster | prepend: site.baseurl }}">
-          <source src="{{ item.file | prepend: site.baseurl }}">
-        </video>
-        {% else %}
-        <div class="academic-video-placeholder" style="background-image:url('{{ item.poster | prepend: site.baseurl }}')">
-          <span>Local video placeholder</span>
-        </div>
-        {% endif %}
-        <div class="academic-video-copy">
-          <p class="academic-card-meta">{{ item.date }}</p>
-          <h3>{{ item.title_en }}</h3>
-          <p>{{ item.description_en }}</p>
-          {% if item.external_url != "" %}
-          <a href="{{ item.external_url }}">External Link</a>
-          {% endif %}
-        </div>
+      <article class="academic-card">
+        <h3>Profile Summary</h3>
+        {% for item in summary.en limit:3 %}
+        <p>{{ item }}</p>
+        {% endfor %}
       </article>
-      {% endfor %}
+      <article class="academic-card">
+        <h3>Contact & Availability</h3>
+        {% for item in contacts.en %}
+        <p>
+          <strong>{{ item.label }}:</strong>
+          {% if item.url != "" %}
+          <a href="{{ item.url | prepend: site.baseurl }}">{{ item.value }}</a>
+          {% else %}
+          {{ item.value }}
+          {% endif %}
+        </p>
+        {% endfor %}
+      </article>
     </div>
   </section>
 

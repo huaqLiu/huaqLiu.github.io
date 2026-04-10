@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Publications"
-description: "Selected papers, preprints, and research outputs"
+title: "Honors"
+description: "Scholarships, honors, and representative achievements"
 header-img: "img/post-bg-universe.jpg"
 header-mask: 0.35
 multilingual: true
@@ -10,31 +10,16 @@ no-catalog: true
 
 {% include multilingual-sel.html %}
 
-{% assign publications = site.data.academic.publications %}
+{% assign awards = site.data.academic.awards %}
 
 <div class="zh post-container">
   <section class="academic-section">
-    <h2>论文与成果</h2>
-    {% for item in publications %}
+    <h2>荣誉奖项</h2>
+    {% for item in awards %}
     <article class="academic-card academic-card-inline">
-      <p class="academic-card-meta">{{ item.venue }} · {{ item.year }}</p>
+      <p class="academic-card-meta">{{ item.year }}</p>
       <h3>{{ item.title_zh }}</h3>
-      <p>{{ item.authors }}</p>
-      <p>{{ item.abstract_zh }}</p>
-      {% if item.tags %}
-      <div class="academic-chip-list">
-        {% for tag in item.tags %}
-        <span class="academic-chip">{{ tag }}</span>
-        {% endfor %}
-      </div>
-      {% endif %}
-      {% if item.links %}
-      <div class="academic-link-row">
-        {% for link in item.links %}
-        <a href="{{ link.url | prepend: site.baseurl }}">{{ link.label }}</a>
-        {% endfor %}
-      </div>
-      {% endif %}
+      <p>{{ item.meta_zh }}</p>
     </article>
     {% endfor %}
   </section>
@@ -42,27 +27,12 @@ no-catalog: true
 
 <div class="en post-container">
   <section class="academic-section">
-    <h2>Publications and Outputs</h2>
-    {% for item in publications %}
+    <h2>Honors and Awards</h2>
+    {% for item in awards %}
     <article class="academic-card academic-card-inline">
-      <p class="academic-card-meta">{{ item.venue }} · {{ item.year }}</p>
+      <p class="academic-card-meta">{{ item.year }}</p>
       <h3>{{ item.title_en }}</h3>
-      <p>{{ item.authors }}</p>
-      <p>{{ item.abstract_en }}</p>
-      {% if item.tags %}
-      <div class="academic-chip-list">
-        {% for tag in item.tags %}
-        <span class="academic-chip">{{ tag }}</span>
-        {% endfor %}
-      </div>
-      {% endif %}
-      {% if item.links %}
-      <div class="academic-link-row">
-        {% for link in item.links %}
-        <a href="{{ link.url | prepend: site.baseurl }}">{{ link.label }}</a>
-        {% endfor %}
-      </div>
-      {% endif %}
+      <p>{{ item.meta_en }}</p>
     </article>
     {% endfor %}
   </section>

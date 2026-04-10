@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "About"
-description: "Academic profile, background, and current research focus"
+description: "Profile, education, technical strengths, and contact information"
 header-img: "img/bg-me-2022.jpg"
 header-mask: 0.3
 multilingual: true
@@ -15,6 +15,7 @@ no-catalog: true
 {% assign education = site.data.academic.education %}
 {% assign interests = site.data.academic.research_interests %}
 {% assign contacts = site.data.academic.contacts %}
+{% assign summary = site.data.academic.summary %}
 
 <!-- Chinese Version -->
 <div class="zh post-container">
@@ -46,7 +47,7 @@ no-catalog: true
     </section>
 
     <section class="academic-section">
-        <h2>研究兴趣</h2>
+        <h2>技术能力</h2>
         <div class="academic-chip-list">
             {% for interest in interests.zh %}
             <span class="academic-chip">{{ interest }}</span>
@@ -55,10 +56,25 @@ no-catalog: true
     </section>
 
     <section class="academic-section">
+        <h2>个人总结</h2>
+        <ul class="academic-contact-list">
+            {% for item in summary.zh %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="academic-section">
         <h2>联系与资料</h2>
         <ul class="academic-contact-list">
             {% for item in contacts.zh %}
-            <li><a href="{{ item.url | prepend: site.baseurl }}">{{ item.label }}</a> · {{ item.value }}</li>
+            <li>
+                {% if item.url != "" %}
+                <a href="{{ item.url | prepend: site.baseurl }}">{{ item.label }}</a> · {{ item.value }}
+                {% else %}
+                {{ item.label }} · {{ item.value }}
+                {% endif %}
+            </li>
             {% endfor %}
         </ul>
     </section>
@@ -94,7 +110,7 @@ no-catalog: true
     </section>
 
     <section class="academic-section">
-        <h2>Research Interests</h2>
+        <h2>Technical Highlights</h2>
         <div class="academic-chip-list">
             {% for interest in interests.en %}
             <span class="academic-chip">{{ interest }}</span>
@@ -103,10 +119,25 @@ no-catalog: true
     </section>
 
     <section class="academic-section">
+        <h2>Profile Summary</h2>
+        <ul class="academic-contact-list">
+            {% for item in summary.en %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="academic-section">
         <h2>Contacts and Materials</h2>
         <ul class="academic-contact-list">
             {% for item in contacts.en %}
-            <li><a href="{{ item.url | prepend: site.baseurl }}">{{ item.label }}</a> · {{ item.value }}</li>
+            <li>
+                {% if item.url != "" %}
+                <a href="{{ item.url | prepend: site.baseurl }}">{{ item.label }}</a> · {{ item.value }}
+                {% else %}
+                {{ item.label }} · {{ item.value }}
+                {% endif %}
+            </li>
             {% endfor %}
         </ul>
     </section>

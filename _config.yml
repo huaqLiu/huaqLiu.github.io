@@ -1,10 +1,10 @@
 # Site settings
 title: Huaqiang Liu
-SEOTitle: 刘华强 | Academic Blog
+SEOTitle: 刘华强 | Robotics Portfolio
 header-img: img/home-bg-art.jpg
-email: ""
-description: "刘华强的中英双语学术博客，展示研究方向、论文、项目、视频与博客文章。"
-keyword: "Academic Blog, Research, Publications, Videos, Jekyll"
+email: "liuhq317@163.com"
+description: "刘华强的个人主页，展示机器人相关项目经历、技术能力、荣誉奖项与求职信息。"
+keyword: "Huaqiang Liu, Robotics, ROS2, MoveIt2, Franka, UAV, Portfolio"
 url: "" # set your production host for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -74,8 +74,8 @@ ga_domain:
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
-sidebar-about-description: "Research, publications, projects, and academic notes."
-sidebar-avatar: /img/avatar-hux-home.jpg
+sidebar-about-description: "Robotics projects, technical strengths, honors, and profile."
+sidebar-avatar: /photo.png
 
 # Featured Tags
 featured-tags: true # whether or not using Feature-Tags

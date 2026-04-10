@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Research"
-description: "Research interests, projects, and academic background"
+title: "Projects"
+description: "Selected robotics projects, technical highlights, and education"
 header-img: "img/bg-little-universe.jpg"
 header-mask: 0.3
 multilingual: true
@@ -14,12 +14,12 @@ no-catalog: true
 
 <div class="zh post-container">
   <section class="academic-section">
-    <h2>研究概况</h2>
+    <h2>项目概况</h2>
     <p>{{ academic.bio.summary_zh }}</p>
   </section>
 
   <section class="academic-section">
-    <h2>研究兴趣</h2>
+    <h2>技术关键词</h2>
     <div class="academic-chip-list">
       {% for item in academic.research_interests.zh %}
       <span class="academic-chip">{{ item }}</span>
@@ -40,12 +40,13 @@ no-catalog: true
   </section>
 
   <section class="academic-section">
-    <h2>研究项目</h2>
+    <h2>项目经历</h2>
     {% for item in academic.projects %}
     <article class="academic-card academic-card-inline">
       <h3>{{ item.name_zh }}</h3>
+      <p class="academic-card-meta">{{ item.period_zh }}</p>
       <p>{{ item.description_zh }}</p>
-      <p class="academic-meta">关联成果：{{ item.related_publication }}</p>
+      <p class="academic-meta">技术点：{{ item.related_publication }}</p>
       {% if item.links %}
       <div class="academic-link-row">
         {% for link in item.links %}
@@ -60,12 +61,12 @@ no-catalog: true
 
 <div class="en post-container">
   <section class="academic-section">
-    <h2>Research Overview</h2>
+    <h2>Project Overview</h2>
     <p>{{ academic.bio.summary_en }}</p>
   </section>
 
   <section class="academic-section">
-    <h2>Research Interests</h2>
+    <h2>Technical Keywords</h2>
     <div class="academic-chip-list">
       {% for item in academic.research_interests.en %}
       <span class="academic-chip">{{ item }}</span>
@@ -86,12 +87,13 @@ no-catalog: true
   </section>
 
   <section class="academic-section">
-    <h2>Projects</h2>
+    <h2>Project Experience</h2>
     {% for item in academic.projects %}
     <article class="academic-card academic-card-inline">
       <h3>{{ item.name_en }}</h3>
+      <p class="academic-card-meta">{{ item.period_en }}</p>
       <p>{{ item.description_en }}</p>
-      <p class="academic-meta">Related output: {{ item.related_publication }}</p>
+      <p class="academic-meta">Technical focus: {{ item.related_publication }}</p>
       {% if item.links %}
       <div class="academic-link-row">
         {% for link in item.links %}
