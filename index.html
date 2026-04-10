@@ -1,0 +1,173 @@
+---
+layout: page
+description: "Research, publications, projects, videos, and academic notes"
+header-img: "img/home-bg-art.jpg"
+header-mask: 0.35
+no-catalog: true
+---
+
+{% assign academic = site.data.academic %}
+{% assign profile = academic.profile %}
+{% assign bio = academic.bio %}
+{% assign publications = academic.publications %}
+{% assign projects = academic.projects %}
+{% assign videos = academic.videos %}
+
+<div class="home-academic">
+  <section class="academic-hero-card">
+    <div class="academic-hero-copy">
+      <p class="academic-kicker">{{ profile.title_en }}</p>
+      <h2>{{ profile.name_en }} / {{ profile.name_zh }}</h2>
+      <p class="academic-lead zh">{{ profile.hero_tagline_zh }}</p>
+      <p class="academic-lead en">{{ profile.hero_tagline_en }}</p>
+      <p class="academic-meta-line zh">{{ profile.affiliation_zh }}</p>
+      <p class="academic-meta-line en">{{ profile.affiliation_en }}</p>
+      <div class="academic-chip-list">
+        {% for interest in academic.research_interests.en %}
+        <span class="academic-chip">{{ interest }}</span>
+        {% endfor %}
+      </div>
+      <div class="academic-action-row">
+        <a class="academic-button academic-button-primary" href="{{ profile.cv_path | prepend: site.baseurl }}">Download CV</a>
+        <a class="academic-button" href="{{ '/research/' | prepend: site.baseurl }}">Explore Research</a>
+      </div>
+    </div>
+    <div class="academic-hero-media">
+      <img src="{{ profile.avatar | prepend: site.baseurl }}" alt="{{ profile.name_en }}">
+    </div>
+  </section>
+
+  <section class="academic-section">
+    <div class="academic-section-heading">
+      <h2>About</h2>
+      <a href="{{ '/about/' | prepend: site.baseurl }}">More</a>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <p>{{ bio.summary_en }}</p>
+      </div>
+      <div class="col-md-6">
+        <p>{{ bio.summary_zh }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="academic-section">
+    <div class="academic-section-heading">
+      <h2>Research Interests</h2>
+      <a href="{{ '/research/' | prepend: site.baseurl }}">View Details</a>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>English</h3>
+        <div class="academic-chip-list">
+          {% for interest in academic.research_interests.en %}
+          <span class="academic-chip">{{ interest }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3>中文</h3>
+        <div class="academic-chip-list">
+          {% for interest in academic.research_interests.zh %}
+          <span class="academic-chip">{{ interest }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="academic-section">
+    <div class="academic-section-heading">
+      <h2>Selected Publications</h2>
+      <a href="{{ '/publications/' | prepend: site.baseurl }}">All Publications</a>
+    </div>
+    <div class="academic-grid">
+      {% for item in publications limit:3 %}
+      <article class="academic-card">
+        <p class="academic-card-meta">{{ item.venue }} · {{ item.year }}</p>
+        <h3>{{ item.title_en }}</h3>
+        <p>{{ item.abstract_en }}</p>
+        <p class="academic-meta">{{ item.authors }}</p>
+        {% if item.links %}
+        <div class="academic-link-row">
+          {% for link in item.links %}
+          <a href="{{ link.url | prepend: site.baseurl }}">{{ link.label }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="academic-section">
+    <div class="academic-section-heading">
+      <h2>Projects</h2>
+      <a href="{{ '/research/' | prepend: site.baseurl }}">Research Page</a>
+    </div>
+    <div class="academic-grid">
+      {% for item in projects limit:3 %}
+      <article class="academic-card">
+        <h3>{{ item.name_en }}</h3>
+        <p>{{ item.description_en }}</p>
+        <p class="academic-meta">{{ item.related_publication }}</p>
+        {% if item.links %}
+        <div class="academic-link-row">
+          {% for link in item.links %}
+          <a href="{{ link.url | prepend: site.baseurl }}">{{ link.label }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="academic-section">
+    <div class="academic-section-heading">
+      <h2>Talks & Videos</h2>
+      <a href="{{ '/videos/' | prepend: site.baseurl }}">Video Library</a>
+    </div>
+    <div class="academic-grid">
+      {% for item in videos limit:2 %}
+      <article class="academic-card academic-video-card">
+        {% if item.file != "" %}
+        <video controls preload="none" poster="{{ item.poster | prepend: site.baseurl }}">
+          <source src="{{ item.file | prepend: site.baseurl }}">
+        </video>
+        {% else %}
+        <div class="academic-video-placeholder" style="background-image:url('{{ item.poster | prepend: site.baseurl }}')">
+          <span>Local video placeholder</span>
+        </div>
+        {% endif %}
+        <div class="academic-video-copy">
+          <p class="academic-card-meta">{{ item.date }}</p>
+          <h3>{{ item.title_en }}</h3>
+          <p>{{ item.description_en }}</p>
+          {% if item.external_url != "" %}
+          <a href="{{ item.external_url }}">External Link</a>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="academic-section">
+    <div class="academic-section-heading">
+      <h2>Latest Posts</h2>
+      <a href="{{ '/archive/' | prepend: site.baseurl }}">Archive</a>
+    </div>
+    {% for post in site.posts limit:4 %}
+    <article class="academic-post-preview">
+      <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+      {% if post.subtitle %}
+      <p class="academic-meta">{{ post.subtitle }}</p>
+      {% endif %}
+      <p>{{ post.content | strip_html | truncate: 160 }}</p>
+      <p class="academic-card-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+    </article>
+    {% endfor %}
+  </section>
+</div>

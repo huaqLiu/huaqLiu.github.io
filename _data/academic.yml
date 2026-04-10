@@ -1,0 +1,93 @@
+profile:
+  name_zh: "刘华强"
+  name_en: "Huaqiang Liu"
+  title_zh: "研究者 · 学术博客作者"
+  title_en: "Researcher · Academic Blogger"
+  affiliation_zh: "在此补充你的学校 / 实验室 / 团队"
+  affiliation_en: "Add your university / lab / group here"
+  email: ""
+  location_zh: "中国"
+  location_en: "China"
+  cv_path: "/main.pdf"
+  avatar: "/img/avatar-hux-home.jpg"
+  hero_image: "/img/home-bg-art.jpg"
+  hero_tagline_zh: "围绕研究、论文、项目与思考展开的个人学术主页。"
+  hero_tagline_en: "A bilingual academic home for research, publications, projects, and ideas."
+
+bio:
+  summary_zh: "这里已完成学术博客的结构化改造。由于当前环境无法稳定提取 `main.pdf` 文本，这一版先把简介、教育经历、论文、项目与视频展示模块全部接通；你只需要把简历中的真实信息填入这个数据文件，就能同步更新首页、About、Research、Publications 与 Videos 页面。"
+  summary_en: "This site has been restructured into a bilingual academic blog. Because the current environment could not reliably extract text from `main.pdf`, this first pass wires up the profile, education, publications, projects, and video sections so that you can fill in the real resume details in one place and update the whole site."
+
+education:
+  - school_zh: "在此填写学校名称"
+    school_en: "Add institution name here"
+    degree_zh: "在此填写学位与专业"
+    degree_en: "Add degree and major here"
+    field_zh: "在此填写研究方向 / 导师 / 实验室"
+    field_en: "Add research area / advisor / lab here"
+    period_zh: "起止时间"
+    period_en: "Date range"
+
+research_interests:
+  zh:
+    - "研究方向待从简历补充"
+    - "论文与项目展示"
+    - "学术写作与技术博客"
+    - "实验视频与成果传播"
+  en:
+    - "Research topics from resume"
+    - "Publications and projects"
+    - "Academic writing and technical blogging"
+    - "Research demos and video communication"
+
+publications:
+  - title_zh: "代表性论文或预印本标题"
+    title_en: "Representative publication or preprint title"
+    authors: "Author list"
+    venue: "Conference / Journal / Workshop"
+    year: "2026"
+    abstract_zh: "在此填写论文摘要、贡献或研究问题。"
+    abstract_en: "Add the abstract, contribution, or research question here."
+    links:
+      - label: "PDF"
+        url: "/main.pdf"
+    tags:
+      - "paper"
+      - "selected"
+    language: "bilingual"
+    featured: true
+
+projects:
+  - name_zh: "研究项目或系统原型"
+    name_en: "Research project or system prototype"
+    description_zh: "在此补充项目背景、方法、实验结果与可公开链接。"
+    description_en: "Add the project context, methods, outcomes, and public links here."
+    links:
+      - label: "CV"
+        url: "/main.pdf"
+    related_publication: "Representative publication or preprint title"
+    related_video: "Project demo video"
+    featured: true
+
+videos:
+  - title_zh: "研究演示视频"
+    title_en: "Research demo video"
+    description_zh: "支持本地视频文件优先。如果你之后把视频放到 `assets/videos/`，这里填相对路径即可。"
+    description_en: "Local video files are supported first. Add a relative path here later if you place videos under `assets/videos/`."
+    date: "2026"
+    file: ""
+    poster: "/img/post-sample-image.jpg"
+    related_output_zh: "关联论文 / 项目"
+    related_output_en: "Related publication / project"
+    external_url: ""
+    featured: true
+
+contacts:
+  zh:
+    - label: "简历"
+      value: "main.pdf"
+      url: "/main.pdf"
+  en:
+    - label: "CV"
+      value: "main.pdf"
+      url: "/main.pdf"

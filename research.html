@@ -1,0 +1,105 @@
+---
+layout: page
+title: "Research"
+description: "Research interests, projects, and academic background"
+header-img: "img/bg-little-universe.jpg"
+header-mask: 0.3
+multilingual: true
+no-catalog: true
+---
+
+{% include multilingual-sel.html %}
+
+{% assign academic = site.data.academic %}
+
+<div class="zh post-container">
+  <section class="academic-section">
+    <h2>研究概况</h2>
+    <p>{{ academic.bio.summary_zh }}</p>
+  </section>
+
+  <section class="academic-section">
+    <h2>研究兴趣</h2>
+    <div class="academic-chip-list">
+      {% for item in academic.research_interests.zh %}
+      <span class="academic-chip">{{ item }}</span>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="academic-section">
+    <h2>教育经历</h2>
+    {% for item in academic.education %}
+    <div class="academic-entry">
+      <h3>{{ item.school_zh }}</h3>
+      <p>{{ item.degree_zh }}</p>
+      <p>{{ item.field_zh }}</p>
+      <p class="academic-meta">{{ item.period_zh }}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="academic-section">
+    <h2>研究项目</h2>
+    {% for item in academic.projects %}
+    <article class="academic-card academic-card-inline">
+      <h3>{{ item.name_zh }}</h3>
+      <p>{{ item.description_zh }}</p>
+      <p class="academic-meta">关联成果：{{ item.related_publication }}</p>
+      {% if item.links %}
+      <div class="academic-link-row">
+        {% for link in item.links %}
+        <a href="{{ link.url | prepend: site.baseurl }}">{{ link.label }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </section>
+</div>
+
+<div class="en post-container">
+  <section class="academic-section">
+    <h2>Research Overview</h2>
+    <p>{{ academic.bio.summary_en }}</p>
+  </section>
+
+  <section class="academic-section">
+    <h2>Research Interests</h2>
+    <div class="academic-chip-list">
+      {% for item in academic.research_interests.en %}
+      <span class="academic-chip">{{ item }}</span>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="academic-section">
+    <h2>Education</h2>
+    {% for item in academic.education %}
+    <div class="academic-entry">
+      <h3>{{ item.school_en }}</h3>
+      <p>{{ item.degree_en }}</p>
+      <p>{{ item.field_en }}</p>
+      <p class="academic-meta">{{ item.period_en }}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="academic-section">
+    <h2>Projects</h2>
+    {% for item in academic.projects %}
+    <article class="academic-card academic-card-inline">
+      <h3>{{ item.name_en }}</h3>
+      <p>{{ item.description_en }}</p>
+      <p class="academic-meta">Related output: {{ item.related_publication }}</p>
+      {% if item.links %}
+      <div class="academic-link-row">
+        {% for link in item.links %}
+        <a href="{{ link.url | prepend: site.baseurl }}">{{ link.label }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </section>
+</div>

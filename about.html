@@ -1,0 +1,113 @@
+---
+layout: page
+title: "About"
+description: "Academic profile, background, and current research focus"
+header-img: "img/bg-me-2022.jpg"
+header-mask: 0.3
+multilingual: true
+no-catalog: true
+---
+
+{% include multilingual-sel.html %}
+
+{% assign profile = site.data.academic.profile %}
+{% assign bio = site.data.academic.bio %}
+{% assign education = site.data.academic.education %}
+{% assign interests = site.data.academic.research_interests %}
+{% assign contacts = site.data.academic.contacts %}
+
+<!-- Chinese Version -->
+<div class="zh post-container">
+    <section class="academic-section">
+        <h2>简介</h2>
+        <p>{{ bio.summary_zh }}</p>
+    </section>
+
+    <section class="academic-section">
+        <h2>当前身份</h2>
+        <p><strong>{{ profile.name_zh }}</strong> · {{ profile.title_zh }}</p>
+        <p>{{ profile.affiliation_zh }}</p>
+        {% if profile.email != "" %}
+        <p>Email: <a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p>
+        {% endif %}
+        <p><a class="academic-link" href="{{ profile.cv_path | prepend: site.baseurl }}">下载简历</a></p>
+    </section>
+
+    <section class="academic-section">
+        <h2>教育经历</h2>
+        {% for item in education %}
+        <div class="academic-entry">
+            <h3>{{ item.school_zh }}</h3>
+            <p>{{ item.degree_zh }}</p>
+            <p>{{ item.field_zh }}</p>
+            <p class="academic-meta">{{ item.period_zh }}</p>
+        </div>
+        {% endfor %}
+    </section>
+
+    <section class="academic-section">
+        <h2>研究兴趣</h2>
+        <div class="academic-chip-list">
+            {% for interest in interests.zh %}
+            <span class="academic-chip">{{ interest }}</span>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="academic-section">
+        <h2>联系与资料</h2>
+        <ul class="academic-contact-list">
+            {% for item in contacts.zh %}
+            <li><a href="{{ item.url | prepend: site.baseurl }}">{{ item.label }}</a> · {{ item.value }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+</div>
+
+<!-- English Version -->
+<div class="en post-container">
+    <section class="academic-section">
+        <h2>Profile</h2>
+        <p>{{ bio.summary_en }}</p>
+    </section>
+
+    <section class="academic-section">
+        <h2>Current Role</h2>
+        <p><strong>{{ profile.name_en }}</strong> · {{ profile.title_en }}</p>
+        <p>{{ profile.affiliation_en }}</p>
+        {% if profile.email != "" %}
+        <p>Email: <a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p>
+        {% endif %}
+        <p><a class="academic-link" href="{{ profile.cv_path | prepend: site.baseurl }}">Download CV</a></p>
+    </section>
+
+    <section class="academic-section">
+        <h2>Education</h2>
+        {% for item in education %}
+        <div class="academic-entry">
+            <h3>{{ item.school_en }}</h3>
+            <p>{{ item.degree_en }}</p>
+            <p>{{ item.field_en }}</p>
+            <p class="academic-meta">{{ item.period_en }}</p>
+        </div>
+        {% endfor %}
+    </section>
+
+    <section class="academic-section">
+        <h2>Research Interests</h2>
+        <div class="academic-chip-list">
+            {% for interest in interests.en %}
+            <span class="academic-chip">{{ interest }}</span>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="academic-section">
+        <h2>Contacts and Materials</h2>
+        <ul class="academic-contact-list">
+            {% for item in contacts.en %}
+            <li><a href="{{ item.url | prepend: site.baseurl }}">{{ item.label }}</a> · {{ item.value }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+</div>

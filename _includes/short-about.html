@@ -1,0 +1,16 @@
+{% assign profile = site.data.academic.profile %}
+<section class="visible-md visible-lg">
+  <hr>
+  <h5><a href="{{'/about/' | prepend: site.baseurl }}">ABOUT ME</a></h5>
+  <div class="short-about">
+    {% if site.sidebar-avatar %}
+    <img src="{{site.sidebar-avatar}}" />
+    {% endif %}
+    <p><strong>{{ profile.name_en }}</strong></p>
+    <p>{{ site.sidebar-about-description }}</p>
+    <p>{{ profile.affiliation_en }}</p>
+    <p><a href="{{ profile.cv_path | prepend: site.baseurl }}">Download CV</a></p>
+    <!-- SNS Link -->
+    {% include sns-links.html %}
+  </div>
+</section>
