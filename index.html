@@ -33,9 +33,6 @@ no-catalog: true
         <a class="academic-button" href="{{ '/research/' | prepend: site.baseurl }}">View Projects</a>
       </div>
     </div>
-    <div class="academic-hero-media">
-      <img src="{{ profile.avatar | prepend: site.baseurl }}" alt="{{ profile.name_en }}">
-    </div>
   </section>
 
   <section class="academic-section">
@@ -96,15 +93,15 @@ no-catalog: true
 
   <section class="academic-section">
     <div class="academic-section-heading">
-      <h2>Project Experience</h2>
+      <h2>项目经历</h2>
       <a href="{{ '/research/' | prepend: site.baseurl }}">All Projects</a>
     </div>
     <div class="academic-grid">
-      {% for item in projects limit:3 %}
+      {% for item in projects %}
       <article class="academic-card">
-        <h3>{{ item.name_en }}</h3>
-        <p>{{ item.description_en }}</p>
-        <p class="academic-meta">{{ item.period_en }} · {{ item.related_publication }}</p>
+        <h3>{{ item.name_zh }}</h3>
+        <p>{{ item.description_zh }}</p>
+        <p class="academic-meta">{{ item.period_zh }} · {{ item.related_publication }}</p>
         {% if item.links %}
         <div class="academic-link-row">
           {% for link in item.links %}
@@ -143,22 +140,5 @@ no-catalog: true
         {% endfor %}
       </article>
     </div>
-  </section>
-
-  <section class="academic-section">
-    <div class="academic-section-heading">
-      <h2>Latest Posts</h2>
-      <a href="{{ '/archive/' | prepend: site.baseurl }}">Archive</a>
-    </div>
-    {% for post in site.posts limit:4 %}
-    <article class="academic-post-preview">
-      <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-      {% if post.subtitle %}
-      <p class="academic-meta">{{ post.subtitle }}</p>
-      {% endif %}
-      <p>{{ post.content | strip_html | truncate: 160 }}</p>
-      <p class="academic-card-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
-    </article>
-    {% endfor %}
   </section>
 </div>
