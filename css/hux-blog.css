@@ -1830,6 +1830,17 @@ img::-moz-selection {
   color: #16324f;
   margin-top: 0;
 }
+.academic-award-badge {
+  background: linear-gradient(135deg, #fff1c9, #ffd977);
+  border: 1px solid #f0c24d;
+  border-radius: 999px;
+  color: #6b4b00;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  padding: 6px 12px;
+}
 .academic-card-inline {
   margin-bottom: 20px;
 }

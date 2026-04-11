@@ -45,6 +45,7 @@ no-catalog: true
     {% for item in academic.projects %}
     <article class="academic-card academic-card-inline" id="{{ item.anchor }}">
       <h3>{{ item.name_zh }}</h3>
+      <p class="academic-award-badge">{{ item.award_zh }}</p>
       <p class="academic-card-meta">{{ item.period_zh }}</p>
       <p>{{ item.description_zh }}</p>
       <p class="academic-meta">技术点：{{ item.related_publication }}</p>
@@ -97,6 +98,7 @@ no-catalog: true
     {% for item in academic.projects %}
     <article class="academic-card academic-card-inline" id="{{ item.anchor }}">
       <h3>{{ item.name_en }}</h3>
+      <p class="academic-award-badge">{{ item.award_en }}</p>
       <p class="academic-card-meta">{{ item.period_en }}</p>
       <p>{{ item.description_en }}</p>
       <p class="academic-meta">Technical focus: {{ item.related_publication }}</p>

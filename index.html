@@ -101,6 +101,7 @@ no-catalog: true
       {% for item in projects %}
       <article class="academic-card">
         <h3>{{ item.name_zh }}</h3>
+        <p class="academic-award-badge">{{ item.award_zh }}</p>
         <p>{{ item.description_zh }}</p>
         <p class="academic-meta">{{ item.period_zh }} · {{ item.related_publication }}</p>
         {% if item.video %}
