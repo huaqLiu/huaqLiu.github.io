@@ -3,7 +3,7 @@ profile:
   name_en: "Huaqiang Liu"
   title_zh: "机器人控制算法工程师求职中"
   title_en: "Robotics Control Algorithm Engineer Candidate"
-  affiliation_zh: "哈尔滨工业大学自动化专业本科生"
+  affiliation_zh: "哈尔滨工业大学自动化专业"
   affiliation_en: "B.Eng. Student in Automation, Harbin Institute of Technology"
   email: "liuhq317@163.com"
   phone: "15045468496"
@@ -16,8 +16,8 @@ profile:
   hero_tagline_en: "Focused on control, perception, and system integration for robotic arms, drones, and embodied intelligence."
 
 bio:
-  summary_zh: "我目前就读于哈尔滨工业大学自动化专业，学分绩 92.268，综合排名 9/108。围绕真实机器人系统开展开发与联调，具备机械臂、无人机、视觉感知、运动规划、阻抗控制与嵌入式系统的项目经验，正在寻找机器人控制算法工程师或具身智能相关算法岗位。"
-  summary_en: "I am an undergraduate student majoring in Automation at Harbin Institute of Technology, with a GPA score of 92.268 and a comprehensive rank of 9/108. My work centers on real robotic systems, with hands-on experience in robotic manipulation, drones, visual perception, motion planning, impedance control, and embedded systems. I am currently seeking roles in robotics control algorithms or embodied intelligence."
+  summary_zh: "目前就读于哈尔滨工业大学自动化专业，学分绩 92.268，综合排名 9/108。围绕真实机器人系统开展开发与联调，具备机械臂、无人机、视觉感知、运动规划、PID、阻抗控制与嵌入式系统的项目经验，正在寻找机器人控制算法工程师或具身智能相关算法岗位。"
+  summary_en: "I am an undergraduate student majoring in Automation at Harbin Institute of Technology, with a GPA score of 92.268 and a comprehensive rank of 9/108. My work centers on real robotic systems, with hands-on experience in robotic manipulation, drones, visual perception, motion planning, PID,impedance control, and embedded systems. I am currently seeking roles in robotics control algorithms or embodied intelligence."
 
 education:
   - school_zh: "哈尔滨工业大学"
