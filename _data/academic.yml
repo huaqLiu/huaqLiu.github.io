@@ -12,7 +12,7 @@ profile:
   cv_path: "/main.pdf"
   avatar: "/photo.png"
   hero_image: "/img/home-bg-art.jpg"
-  hero_tagline_zh: "聚焦机械臂、无人机与具身智能方向的控制、感知与系统集成实践。"
+  hero_tagline_zh: "聚焦机械臂、无人机等机器人与具身智能方向的控制、感知及系统集成实践。"
   hero_tagline_en: "Focused on control, perception, and system integration for robotic arms, drones, and embodied intelligence."
 
 bio:

@@ -124,19 +124,19 @@ no-catalog: true
 
   <section class="academic-section">
     <div class="academic-section-heading">
-      <h2>Contact & Summary</h2>
-      <a href="{{ '/videos/' | prepend: site.baseurl }}">View Profile</a>
+      <h2>联系与总结</h2>
+      <a href="{{ '/videos/' | prepend: site.baseurl }}">查看详情</a>
     </div>
     <div class="academic-grid">
       <article class="academic-card">
-        <h3>Profile Summary</h3>
-        {% for item in summary.en limit:3 %}
+        <h3>个人总结</h3>
+        {% for item in summary.zh limit:3 %}
         <p>{{ item }}</p>
         {% endfor %}
       </article>
       <article class="academic-card">
-        <h3>Contact & Availability</h3>
-        {% for item in contacts.en %}
+        <h3>联系与求职信息</h3>
+        {% for item in contacts.zh %}
         <p>
           <strong>{{ item.label }}:</strong>
           {% if item.url != "" %}
