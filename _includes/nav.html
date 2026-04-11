@@ -23,7 +23,7 @@
                         <li>
                             <a href="{{ site.baseurl }}/">Home</a>
                         </li>
-                        {% assign nav_pages = "research.html,publications.html,videos.html,about.html,archive.html" | split: "," %}
+                        {% assign nav_pages = "research.html,publications.html,videos.html" | split: "," %}
                         {% for nav_path in nav_pages %}
                         {% assign nav_page = site.pages | where: "path", nav_path | first %}
                         {% if nav_page and nav_page.title and nav_page.hide-in-nav != true %}
