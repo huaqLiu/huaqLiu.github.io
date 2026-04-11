@@ -43,11 +43,16 @@ no-catalog: true
   <section class="academic-section">
     <h2>项目经历</h2>
     {% for item in academic.projects %}
-    <article class="academic-card academic-card-inline">
+    <article class="academic-card academic-card-inline" id="{{ item.anchor }}">
       <h3>{{ item.name_zh }}</h3>
       <p class="academic-card-meta">{{ item.period_zh }}</p>
       <p>{{ item.description_zh }}</p>
       <p class="academic-meta">技术点：{{ item.related_publication }}</p>
+      {% if item.video %}
+      <video controls preload="metadata" style="width:100%; margin-top:16px; border-radius:10px;">
+        <source src="{{ item.video | prepend: site.baseurl }}" type="video/mp4">
+      </video>
+      {% endif %}
       {% if item.links %}
       <div class="academic-link-row">
         {% for link in item.links %}
@@ -90,11 +95,16 @@ no-catalog: true
   <section class="academic-section">
     <h2>Project Experience</h2>
     {% for item in academic.projects %}
-    <article class="academic-card academic-card-inline">
+    <article class="academic-card academic-card-inline" id="{{ item.anchor }}">
       <h3>{{ item.name_en }}</h3>
       <p class="academic-card-meta">{{ item.period_en }}</p>
       <p>{{ item.description_en }}</p>
       <p class="academic-meta">Technical focus: {{ item.related_publication }}</p>
+      {% if item.video %}
+      <video controls preload="metadata" style="width:100%; margin-top:16px; border-radius:10px;">
+        <source src="{{ item.video | prepend: site.baseurl }}" type="video/mp4">
+      </video>
+      {% endif %}
       {% if item.links %}
       <div class="academic-link-row">
         {% for link in item.links %}

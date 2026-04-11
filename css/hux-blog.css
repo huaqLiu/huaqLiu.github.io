@@ -1850,6 +1850,37 @@ img::-moz-selection {
 .academic-video-block {
   overflow: hidden;
 }
+.academic-video-preview {
+  align-items: center;
+  background: linear-gradient(135deg, #eef3f7, #f9fbfc);
+  border: 1px solid #d9e3ea;
+  border-radius: 12px;
+  color: #16324f;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 16px;
+  min-height: 150px;
+  padding: 18px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.academic-video-preview:hover {
+  box-shadow: 0 10px 24px rgba(14, 32, 51, 0.08);
+  color: #16324f;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+.academic-video-preview-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+.academic-video-preview-meta {
+  color: #5f6f82;
+  font-size: 13px;
+}
 .academic-video-card video,
 .academic-video-block video {
   border-radius: 12px;

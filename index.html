@@ -103,6 +103,12 @@ no-catalog: true
         <h3>{{ item.name_zh }}</h3>
         <p>{{ item.description_zh }}</p>
         <p class="academic-meta">{{ item.period_zh }} · {{ item.related_publication }}</p>
+        {% if item.video %}
+        <a class="academic-video-preview" href="{{ '/research/' | prepend: site.baseurl }}#{{ item.anchor }}">
+          <span class="academic-video-preview-title">{{ item.preview_label_zh }}</span>
+          <span class="academic-video-preview-meta">点击进入项目页观看完整视频</span>
+        </a>
+        {% endif %}
         {% if item.links %}
         <div class="academic-link-row">
           {% for link in item.links %}
