@@ -19,6 +19,17 @@
         background: rgba(0,0,0, {{ page.header-mask }});
     }
     {% endif %}
+
+    {% if include.type == 'page' and page.header-bg-css %}
+    header.intro-header .site-heading,
+    header.intro-header .page-heading,
+    header.intro-header .site-heading h1,
+    header.intro-header .page-heading h1,
+    header.intro-header .site-heading .subheading,
+    header.intro-header .page-heading .subheading {
+        color: #23313f;
+    }
+    {% endif %}
 </style>
 {% endif %}
 
