@@ -110,7 +110,7 @@ projects:
     name_en: "China Engineering Practice and Innovation Competition"
     award_zh: "全国一等奖｜电控组组长"
     award_en: "National First Prize | Electrical Team Lead"
-    description_zh: "设计并实现基于 SCARA 机械臂与四麦轮底盘小车的自动化集成系统，独立编写覆盖 20+ 项任务、100+ 状态的状态机控制逻辑，完成视觉识别、定位与抓取联调。"
+    description_zh: "设计并实现基于 SCARA 机械臂与四麦轮（全向轮）底盘小车的自动化集成系统，独立编写覆盖 20+ 项任务、100+ 状态的状态机控制逻辑，完成视觉识别、定位与抓取联调。"
     description_en: "Designed an integrated automation system based on a SCARA arm and a four-mecanum-wheel mobile platform, and independently implemented a full state machine covering 20+ tasks and 100+ states for coordinated perception and manipulation."
     period_zh: "2025.01 - 2025.08"
     period_en: "Jan 2025 - Aug 2025"
