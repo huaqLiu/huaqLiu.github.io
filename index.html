@@ -41,14 +41,7 @@ no-catalog: true
       <h2>About</h2>
       <a href="{{ '/about/' | prepend: site.baseurl }}">More</a>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <p>{{ bio.summary_en }}</p>
-      </div>
-      <div class="col-md-6">
-        <p>{{ bio.summary_zh }}</p>
-      </div>
-    </div>
+    <p>{{ bio.summary_zh }}</p>
   </section>
 
   <section class="academic-section">
