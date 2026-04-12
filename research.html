@@ -26,18 +26,6 @@ no-catalog: true
   </section>
 
   <section class="academic-section">
-    <h2>Education</h2>
-    {% for item in academic.education %}
-    <div class="academic-entry">
-      <h3>{{ item.school_zh }}</h3>
-      <p>{{ item.degree_zh }}</p>
-      <p>{{ item.field_zh }}</p>
-      <p class="academic-meta">{{ item.period_zh }}</p>
-    </div>
-    {% endfor %}
-  </section>
-
-  <section class="academic-section">
     <h2>Project Experience</h2>
     {% for item in academic.projects %}
     <article class="academic-card academic-card-inline" id="{{ item.anchor }}">
