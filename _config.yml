@@ -74,7 +74,7 @@ ga_domain:
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
-sidebar-about-description: "Robotics projects, technical strengths, honors, and profile."
+sidebar-about-description: "机器人项目经历、技术能力、获奖情况与个人简介。"
 sidebar-avatar: /photo.png
 
 # Featured Tags

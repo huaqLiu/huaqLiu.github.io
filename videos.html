@@ -5,18 +5,15 @@ description: "Personal summary, job intent, and contact details"
 header-bg-css: "#eef4f7"
 header-mask: 0
 nav-style: "invert"
-multilingual: true
 no-catalog: true
 ---
-
-{% include multilingual-sel.html %}
 
 {% assign summary = site.data.academic.summary %}
 {% assign contacts = site.data.academic.contacts %}
 
-<div class="zh post-container">
+<div class="post-container">
   <section class="academic-section">
-    <h2>个人总结</h2>
+    <h2>Profile Summary</h2>
     <ul class="academic-contact-list">
       {% for item in summary.zh %}
       <li>{{ item }}</li>
@@ -25,35 +22,9 @@ no-catalog: true
   </section>
 
   <section class="academic-section">
-    <h2>联系与求职信息</h2>
-    <ul class="academic-contact-list">
-      {% for item in contacts.zh %}
-      <li>
-        {% if item.url != "" %}
-        <a href="{{ item.url | prepend: site.baseurl }}">{{ item.label }}</a> · {{ item.value }}
-        {% else %}
-        {{ item.label }} · {{ item.value }}
-        {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
-</div>
-
-<div class="en post-container">
-  <section class="academic-section">
-    <h2>Profile Summary</h2>
-    <ul class="academic-contact-list">
-      {% for item in summary.en %}
-      <li>{{ item }}</li>
-      {% endfor %}
-    </ul>
-  </section>
-
-  <section class="academic-section">
     <h2>Contact and Availability</h2>
     <ul class="academic-contact-list">
-      {% for item in contacts.en %}
+      {% for item in contacts.zh %}
       <li>
         {% if item.url != "" %}
         <a href="{{ item.url | prepend: site.baseurl }}">{{ item.label }}</a> · {{ item.value }}

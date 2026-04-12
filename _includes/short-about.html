@@ -6,9 +6,9 @@
     {% if site.sidebar-avatar %}
     <img src="{{site.sidebar-avatar}}" />
     {% endif %}
-    <p><strong>{{ profile.name_en }}</strong></p>
+    <p><strong>{{ profile.name_zh }}</strong></p>
     <p>{{ site.sidebar-about-description }}</p>
-    <p>{{ profile.affiliation_en }}</p>
+    <p>{{ profile.affiliation_zh }}</p>
     <p><a href="{{ profile.cv_path | prepend: site.baseurl }}">下载简历</a></p>
     <!-- SNS Link -->
     {% include sns-links.html %}

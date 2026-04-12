@@ -5,22 +5,19 @@ description: "Selected robotics projects, technical highlights, and education"
 header-bg-css: "#f3f6f2"
 header-mask: 0
 nav-style: "invert"
-multilingual: true
 no-catalog: true
 ---
 
-{% include multilingual-sel.html %}
-
 {% assign academic = site.data.academic %}
 
-<div class="zh post-container">
+<div class="post-container">
   <section class="academic-section">
-    <h2>项目概况</h2>
+    <h2>Project Overview</h2>
     <p>{{ academic.bio.summary_zh }}</p>
   </section>
 
   <section class="academic-section">
-    <h2>技术关键词</h2>
+    <h2>Technical Keywords</h2>
     <div class="academic-chip-list">
       {% for item in academic.research_interests.zh %}
       <span class="academic-chip">{{ item }}</span>
@@ -29,7 +26,7 @@ no-catalog: true
   </section>
 
   <section class="academic-section">
-    <h2>教育经历</h2>
+    <h2>Education</h2>
     {% for item in academic.education %}
     <div class="academic-entry">
       <h3>{{ item.school_zh }}</h3>
@@ -41,7 +38,7 @@ no-catalog: true
   </section>
 
   <section class="academic-section">
-    <h2>项目经历</h2>
+    <h2>Project Experience</h2>
     {% for item in academic.projects %}
     <article class="academic-card academic-card-inline" id="{{ item.anchor }}">
       <h3>{{ item.name_zh }}</h3>
@@ -49,59 +46,6 @@ no-catalog: true
       <p class="academic-card-meta">{{ item.period_zh }}</p>
       <p>{{ item.description_zh }}</p>
       <p class="academic-meta">技术点：{{ item.related_publication }}</p>
-      {% if item.video %}
-      <video controls preload="metadata" style="width:100%; margin-top:16px; border-radius:10px;">
-        <source src="{{ item.video | prepend: site.baseurl }}" type="video/mp4">
-      </video>
-      {% endif %}
-      {% if item.links %}
-      <div class="academic-link-row">
-        {% for link in item.links %}
-        <a href="{{ link.url | prepend: site.baseurl }}">{{ link.label }}</a>
-        {% endfor %}
-      </div>
-      {% endif %}
-    </article>
-    {% endfor %}
-  </section>
-</div>
-
-<div class="en post-container">
-  <section class="academic-section">
-    <h2>Project Overview</h2>
-    <p>{{ academic.bio.summary_en }}</p>
-  </section>
-
-  <section class="academic-section">
-    <h2>Technical Keywords</h2>
-    <div class="academic-chip-list">
-      {% for item in academic.research_interests.en %}
-      <span class="academic-chip">{{ item }}</span>
-      {% endfor %}
-    </div>
-  </section>
-
-  <section class="academic-section">
-    <h2>Education</h2>
-    {% for item in academic.education %}
-    <div class="academic-entry">
-      <h3>{{ item.school_en }}</h3>
-      <p>{{ item.degree_en }}</p>
-      <p>{{ item.field_en }}</p>
-      <p class="academic-meta">{{ item.period_en }}</p>
-    </div>
-    {% endfor %}
-  </section>
-
-  <section class="academic-section">
-    <h2>Project Experience</h2>
-    {% for item in academic.projects %}
-    <article class="academic-card academic-card-inline" id="{{ item.anchor }}">
-      <h3>{{ item.name_en }}</h3>
-      <p class="academic-award-badge">{{ item.award_en }}</p>
-      <p class="academic-card-meta">{{ item.period_en }}</p>
-      <p>{{ item.description_en }}</p>
-      <p class="academic-meta">Technical focus: {{ item.related_publication }}</p>
       {% if item.video %}
       <video controls preload="metadata" style="width:100%; margin-top:16px; border-radius:10px;">
         <source src="{{ item.video | prepend: site.baseurl }}" type="video/mp4">
