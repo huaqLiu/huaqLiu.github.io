@@ -35,9 +35,14 @@ no-catalog: true
       <p>{{ item.description_zh }}</p>
       <p class="academic-meta">技术点：{{ item.related_publication }}</p>
       {% if item.video %}
-      <video controls preload="metadata" style="width:100%; margin-top:16px; border-radius:10px;">
-        <source src="{{ item.video | prepend: site.baseurl }}" type="video/mp4">
-      </video>
+      <div class="academic-video-block js-video-container" data-video-src="{{ item.video | prepend: site.baseurl }}" data-video-title="{{ item.name_zh | escape }}">
+        <button type="button" class="academic-video-preview js-load-video" aria-label="加载 {{ item.name_zh }} 视频">
+          <span class="academic-video-preview-badge">VIDEO</span>
+          <span class="academic-video-preview-title">{{ item.name_zh }}</span>
+          <span class="academic-video-preview-meta">{{ item.preview_label_zh | default: "点击加载视频" }}</span>
+          <span class="academic-video-preview-action">点击播放</span>
+        </button>
+      </div>
       {% endif %}
       {% if item.links %}
       <div class="academic-link-row">
@@ -50,3 +55,31 @@ no-catalog: true
     {% endfor %}
   </section>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var triggers = document.querySelectorAll('.js-load-video');
+
+    Array.prototype.forEach.call(triggers, function (trigger) {
+      trigger.addEventListener('click', function () {
+        var container = trigger.closest('.js-video-container');
+        if (!container || container.getAttribute('data-loaded') === 'true') {
+          return;
+        }
+
+        var src = container.getAttribute('data-video-src');
+        var title = container.getAttribute('data-video-title') || '项目视频';
+        if (!src) {
+          return;
+        }
+
+        container.innerHTML =
+          '<video controls preload="metadata" style="width:100%; margin-top:16px; border-radius:10px;" aria-label="' + title + '">' +
+          '<source src="' + src + '" type="video/mp4">' +
+          '当前浏览器不支持 video 标签。' +
+          '</video>';
+        container.setAttribute('data-loaded', 'true');
+      });
+    });
+  });
+</script>

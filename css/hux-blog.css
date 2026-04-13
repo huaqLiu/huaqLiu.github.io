@@ -1863,34 +1863,57 @@ img::-moz-selection {
 }
 .academic-video-preview {
   align-items: center;
-  background: linear-gradient(135deg, #eef3f7, #f9fbfc);
-  border: 1px solid #d9e3ea;
+  background:
+    linear-gradient(160deg, rgba(12, 27, 40, 0.72), rgba(22, 50, 79, 0.28)),
+    linear-gradient(135deg, #577590, #1d3557 58%, #0b1f33);
+  border: 1px solid #c7d4de;
   border-radius: 12px;
-  color: #16324f;
+  color: #f8fbfd;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
   justify-content: center;
   margin-top: 16px;
-  min-height: 150px;
-  padding: 18px;
+  min-height: 220px;
+  padding: 24px;
   text-align: center;
   text-decoration: none;
   transition: all 0.2s ease;
+  width: 100%;
 }
 .academic-video-preview:hover {
   box-shadow: 0 10px 24px rgba(14, 32, 51, 0.08);
-  color: #16324f;
+  color: #f8fbfd;
   text-decoration: none;
   transform: translateY(-1px);
 }
-.academic-video-preview-title {
-  font-size: 18px;
+.academic-video-preview-badge {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  font-size: 11px;
   font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 6px 10px;
+}
+.academic-video-preview-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+  max-width: 520px;
 }
 .academic-video-preview-meta {
-  color: #5f6f82;
-  font-size: 13px;
+  color: rgba(248, 251, 253, 0.86);
+  font-size: 14px;
+}
+.academic-video-preview-action {
+  background: #f2b63d;
+  border-radius: 999px;
+  color: #16324f;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 18px;
 }
 .academic-video-card video,
 .academic-video-block video {
