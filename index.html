@@ -44,6 +44,34 @@ no-catalog: true
 
   <section class="academic-section">
     <div class="academic-section-heading">
+      <h2>联系与总结</h2>
+      <a href="{{ '/videos/' | prepend: site.baseurl }}">查看详情</a>
+    </div>
+    <div class="academic-grid">
+      <article class="academic-card">
+        <h3>个人总结</h3>
+        {% for item in summary.zh limit:3 %}
+        <p>{{ item }}</p>
+        {% endfor %}
+      </article>
+      <article class="academic-card">
+        <h3>联系与求职信息</h3>
+        {% for item in contacts.zh %}
+        <p>
+          <strong>{{ item.label }}:</strong>
+          {% if item.url != "" %}
+          <a href="{{ item.url | prepend: site.baseurl }}">{{ item.value }}</a>
+          {% else %}
+          {{ item.value }}
+          {% endif %}
+        </p>
+        {% endfor %}
+      </article>
+    </div>
+  </section>
+
+  <section class="academic-section">
+    <div class="academic-section-heading">
       <h2>Technical Highlights</h2>
       <a href="{{ '/about/' | prepend: site.baseurl }}">View Details</a>
     </div>
@@ -64,7 +92,7 @@ no-catalog: true
       <article class="academic-card">
         <p class="academic-card-meta">{{ item.year }}</p>
         <h3>{{ item.title_zh }}</h3>
-        <p>{{ item.meta_zh }}</p>
+        <p{% if item.title_zh == "一等安雅奖学金" or item.title_zh == "一等人民奖学金" %} class="academic-award-note-emphasis"{% endif %}>{{ item.meta_zh }}</p>
       </article>
       {% endfor %}
     </div>
@@ -100,31 +128,4 @@ no-catalog: true
     </div>
   </section>
 
-  <section class="academic-section">
-    <div class="academic-section-heading">
-      <h2>联系与总结</h2>
-      <a href="{{ '/videos/' | prepend: site.baseurl }}">查看详情</a>
-    </div>
-    <div class="academic-grid">
-      <article class="academic-card">
-        <h3>个人总结</h3>
-        {% for item in summary.zh limit:3 %}
-        <p>{{ item }}</p>
-        {% endfor %}
-      </article>
-      <article class="academic-card">
-        <h3>联系与求职信息</h3>
-        {% for item in contacts.zh %}
-        <p>
-          <strong>{{ item.label }}:</strong>
-          {% if item.url != "" %}
-          <a href="{{ item.url | prepend: site.baseurl }}">{{ item.value }}</a>
-          {% else %}
-          {{ item.value }}
-          {% endif %}
-        </p>
-        {% endfor %}
-      </article>
-    </div>
-  </section>
 </div>

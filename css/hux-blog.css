@@ -1841,6 +1841,11 @@ img::-moz-selection {
   margin-bottom: 12px;
   padding: 6px 12px;
 }
+.academic-award-note-emphasis {
+  color: #7a1f1f;
+  font-size: 16px;
+  font-weight: 700;
+}
 .academic-card-inline {
   margin-bottom: 20px;
 }

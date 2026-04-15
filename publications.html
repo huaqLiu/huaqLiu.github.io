@@ -20,7 +20,7 @@ no-catalog: true
     <article class="academic-card academic-card-inline">
       <p class="academic-card-meta">{{ item.year }}</p>
       <h3>{{ item.title_zh }}</h3>
-      <p>{{ item.meta_zh }}</p>
+      <p{% if item.title_zh == "一等安雅奖学金" or item.title_zh == "一等人民奖学金" %} class="academic-award-note-emphasis"{% endif %}>{{ item.meta_zh }}</p>
     </article>
     {% endfor %}
   </section>
@@ -33,7 +33,7 @@ no-catalog: true
     <article class="academic-card academic-card-inline">
       <p class="academic-card-meta">{{ item.year }}</p>
       <h3>{{ item.title_en }}</h3>
-      <p>{{ item.meta_en }}</p>
+      <p{% if item.title_zh == "一等安雅奖学金" or item.title_zh == "一等人民奖学金" %} class="academic-award-note-emphasis"{% endif %}>{{ item.meta_en }}</p>
     </article>
     {% endfor %}
   </section>
