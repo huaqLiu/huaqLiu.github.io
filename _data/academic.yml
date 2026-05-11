@@ -162,7 +162,7 @@ contacts:
       value: "机器人控制算法 / 具身智能算法"
       url: ""
     - label: "到岗情况"
-      value: "随时到岗，可连续实习 4 个月以上"
+      value: "随时到岗"
       url: ""
   en:
     - label: "Email"
