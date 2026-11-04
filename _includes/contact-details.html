@@ -1,0 +1,8 @@
+{% assign profile = site.data.academic.profile %}
+<dl class="academic-contact-details">
+  <div><dt>邮箱</dt><dd><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></dd></div>
+  <div><dt>电话</dt><dd><a href="tel:{{ profile.phone }}">{{ profile.phone }}</a></dd></div>
+  <div><dt>实习意向</dt><dd>{{ profile.target_role }}</dd></div>
+  <div><dt>到岗安排</dt><dd>{{ profile.availability }}</dd></div>
+  <div><dt>个人简历</dt><dd><a href="{{ profile.cv_path | relative_url }}">下载简历（PDF） <span aria-hidden="true">↗</span></a></dd></div>
+</dl>

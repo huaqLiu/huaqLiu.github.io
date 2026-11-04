@@ -1,0 +1,7 @@
+{% for item in site.data.academic.education %}
+<article class="academic-entry">
+  <div class="academic-entry-heading"><h3>{{ item.school_zh }}</h3><span class="academic-date">{{ item.period_zh }}</span></div>
+  <p class="academic-role">{{ item.degree_zh }}{% if item.department != "" %} · {{ item.department }}{% endif %}</p>
+  <p class="academic-muted">{{ item.note }}</p>
+</article>
+{% endfor %}

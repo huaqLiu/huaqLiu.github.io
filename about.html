@@ -1,78 +1,36 @@
 ---
 layout: page
 title: "About"
-description: "Profile, education, technical strengths, and contact information"
-header-bg-css: "#f6f2ea"
-header-mask: 0
+subtitle: "关于我"
+description: "教育经历、实习工作与技术能力"
 nav-style: "invert"
 no-catalog: true
 ---
-
-{% assign profile = site.data.academic.profile %}
-{% assign bio = site.data.academic.bio %}
-{% assign education = site.data.academic.education %}
-{% assign interests = site.data.academic.research_interests %}
-{% assign contacts = site.data.academic.contacts %}
-{% assign summary = site.data.academic.summary %}
-
-<div class="post-container">
-    <section class="academic-section">
-        <h2>About</h2>
-        <p>{{ bio.summary_zh }}</p>
-    </section>
-
-    <section class="academic-section">
-        <h2>Current Role</h2>
-        <p><strong>{{ profile.name_zh }}</strong> · {{ profile.title_zh }}</p>
-        <p>{{ profile.affiliation_zh }}</p>
-        {% if profile.email != "" %}
-        <p>Email: <a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p>
-        {% endif %}
-        <p><a class="academic-link" href="{{ profile.cv_path | prepend: site.baseurl }}">下载简历</a></p>
-    </section>
-
-    <section class="academic-section">
-        <h2>Education</h2>
-        {% for item in education %}
-        <div class="academic-entry">
-            <h3>{{ item.school_zh }}</h3>
-            <p>{{ item.degree_zh }}</p>
-            <p>{{ item.field_zh }}</p>
-            <p class="academic-meta">{{ item.period_zh }}</p>
-        </div>
-        {% endfor %}
-    </section>
-
-    <section class="academic-section">
-        <h2>Technical Highlights</h2>
-        <div class="academic-chip-list">
-            {% for interest in interests.zh %}
-            <span class="academic-chip">{{ interest }}</span>
-            {% endfor %}
-        </div>
-    </section>
-
-    <section class="academic-section">
-        <h2>Profile Summary</h2>
-        <ul class="academic-contact-list">
-            {% for item in summary.zh %}
-            <li>{{ item }}</li>
-            {% endfor %}
-        </ul>
-    </section>
-
-    <section class="academic-section">
-        <h2>Contacts and Materials</h2>
-        <ul class="academic-contact-list">
-            {% for item in contacts.zh %}
-            <li>
-                {% if item.url != "" %}
-                <a href="{{ item.url | prepend: site.baseurl }}">{{ item.label }}</a> · {{ item.value }}
-                {% else %}
-                {{ item.label }} · {{ item.value }}
-                {% endif %}
-            </li>
-            {% endfor %}
-        </ul>
-    </section>
-</div>
+{% assign academic = site.data.academic %}
+<section class="academic-section">
+  <h2>个人简介 <span>Biography</span></h2>
+  <p>{{ academic.bio.summary_zh }}</p>
+  <p>{{ academic.bio.experience_zh }}</p>
+</section>
+<section class="academic-section">
+  <h2>教育经历 <span>Education</span></h2>
+  {% include education-list.html %}
+</section>
+<section class="academic-section" id="experience">
+  <h2>实习经历 <span>Experience</span></h2>
+  {% for item in academic.experience %}
+  <article class="academic-entry">
+    <div class="academic-entry-heading"><h3>{{ item.organization }}</h3><span class="academic-date">{{ item.period }}</span></div>
+    <p class="academic-role">{{ item.role }}</p>
+    <ul class="academic-detail-list">{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul>
+  </article>
+  {% endfor %}
+</section>
+<section class="academic-section">
+  <h2>技术能力 <span>Technical Skills</span></h2>
+  {% include skills-list.html %}
+</section>
+<section class="academic-section" id="contact">
+  <h2>联系与实习 <span>Contact</span></h2>
+  {% include contact-details.html %}
+</section>

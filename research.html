@@ -1,85 +1,38 @@
 ---
 layout: page
 title: "Projects"
-description: "Selected robotics projects, technical highlights, and education"
-header-bg-css: "#f3f6f2"
-header-mask: 0
+subtitle: "项目与实践"
+description: "机器人运动控制、动力学辨识与感知控制系统集成"
 nav-style: "invert"
 no-catalog: true
 ---
-
 {% assign academic = site.data.academic %}
-
-<div class="post-container">
-  <section class="academic-section">
-    <h2>Project Overview</h2>
-    <p>主要围绕机器人系统的感知、控制与集成展开，涵盖机械臂智能抓取、无人机系统开发以及移动平台与操作机构协同控制等方向。在本科毕业设计中，我完成了基于视觉语言大模型的机械臂智能抓取系统，实现了从自然语言理解、目标识别与分割到抓取位姿生成和机械臂执行控制的完整闭环；在 RoboMaster 与电子设计竞赛中，我围绕无人机平台设计、定位建图、三轴云台控制和任务执行开展了较系统的工程实践；在工程实践与创新能力大赛中，我完成了机械臂与移动底盘协同系统的控制逻辑设计与系统集成；在电赛中，我独立完成了四旋翼无人机的方案设计、硬件集成、控制开发与整机调试。整体来看，这些项目使我积累了较扎实的机器人软硬件协同开发经验，也让我具备了从算法实现、系统联调到工程落地的综合能力。</p>
-  </section>
-
-  <section class="academic-section">
-    <h2>Technical Keywords</h2>
-    <div class="academic-chip-list">
-      {% for item in academic.research_interests.zh %}
-      <span class="academic-chip">{{ item }}</span>
-      {% endfor %}
-    </div>
-  </section>
-
-  <section class="academic-section">
-    <h2>Project Experience</h2>
-    {% for item in academic.projects %}
-    <article class="academic-card academic-card-inline" id="{{ item.anchor }}">
-      <h3>{{ item.name_zh }}</h3>
-      <p class="academic-award-badge">{{ item.award_zh }}</p>
-      <p class="academic-card-meta">{{ item.period_zh }}</p>
-      <p>{{ item.description_zh }}</p>
-      <p class="academic-meta">技术点：{{ item.related_publication }}</p>
-      {% if item.video %}
-      <div class="academic-video-block js-video-container" data-video-src="{{ item.video | prepend: site.baseurl }}" data-video-title="{{ item.name_zh | escape }}">
-        <button type="button" class="academic-video-preview js-load-video" aria-label="加载 {{ item.name_zh }} 视频">
-          <span class="academic-video-preview-badge">VIDEO</span>
-          <span class="academic-video-preview-title">{{ item.name_zh }}</span>
-          <span class="academic-video-preview-meta">{{ item.preview_label_zh | default: "点击加载视频" }}</span>
-          <span class="academic-video-preview-action">点击播放</span>
-        </button>
-      </div>
-      {% endif %}
-      {% if item.links %}
-      <div class="academic-link-row">
-        {% for link in item.links %}
-        <a href="{{ link.url | prepend: site.baseurl }}">{{ link.label }}</a>
-        {% endfor %}
-      </div>
-      {% endif %}
-    </article>
-    {% endfor %}
-  </section>
-</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var triggers = document.querySelectorAll('.js-load-video');
-
-    Array.prototype.forEach.call(triggers, function (trigger) {
-      trigger.addEventListener('click', function () {
-        var container = trigger.closest('.js-video-container');
-        if (!container || container.getAttribute('data-loaded') === 'true') {
-          return;
-        }
-
-        var src = container.getAttribute('data-video-src');
-        var title = container.getAttribute('data-video-title') || '项目视频';
-        if (!src) {
-          return;
-        }
-
-        container.innerHTML =
-          '<video controls preload="metadata" style="width:100%; margin-top:16px; border-radius:10px;" aria-label="' + title + '">' +
-          '<source src="' + src + '" type="video/mp4">' +
-          '当前浏览器不支持 video 标签。' +
-          '</video>';
-        container.setAttribute('data-loaded', 'true');
-      });
-    });
-  });
-</script>
+<nav class="academic-section-nav" aria-label="项目目录"><a href="#projects">研究与开发</a><a href="#competitions">竞赛实践</a></nav>
+<section class="academic-section" id="projects">
+  <h2>研究与开发 <span>Research & Development</span></h2>
+  {% for item in academic.projects %}
+  <article class="academic-project-detail" id="{{ item.anchor }}">
+    <p class="academic-eyebrow">{{ item.category }}</p>
+    <div class="academic-entry-heading"><h3>{{ item.name_zh }}</h3><span class="academic-date">{{ item.period_zh }}</span></div>
+    <p class="academic-project-english" lang="en">{{ item.name_en }}</p>
+    {% if item.background %}<p>{{ item.background }}</p>{% endif %}
+    <ul class="academic-detail-list">{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul>
+    <p class="academic-tech">{{ item.technologies }}</p>
+    {% if item.video %}{% include project-video.html %}{% endif %}
+  </article>
+  {% endfor %}
+</section>
+<section class="academic-section" id="competitions">
+  <h2>竞赛实践 <span>Competitions</span></h2>
+  {% for item in academic.competitions %}
+  <article class="academic-project-detail" id="{{ item.anchor }}">
+    <div class="academic-entry-heading"><h3>{{ item.name_zh }}</h3><span class="academic-date">{{ item.period_zh }}</span></div>
+    <p class="academic-role"><span class="academic-award">{{ item.award_zh }}</span> · {{ item.role }}</p>
+    <p>{{ item.summary }}</p>
+    {% for detail in item.details %}<p>{{ detail }}</p>{% endfor %}
+    <p class="academic-tech">{{ item.technologies }}</p>
+    {% include project-video.html %}
+  </article>
+  {% endfor %}
+</section>
+<script src="{{ '/js/project-videos.js' | relative_url }}" defer></script>

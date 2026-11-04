@@ -1,40 +1,27 @@
 ---
 layout: page
 title: "Honors"
-description: "Scholarships, honors, and representative achievements"
-header-bg-css: "#f5f1f8"
-header-mask: 0
+subtitle: "荣誉与奖项"
+description: "奖学金、校级荣誉与机器人竞赛获奖"
 nav-style: "invert"
-multilingual: true
 no-catalog: true
 ---
-
-{% include multilingual-sel.html %}
-
-{% assign awards = site.data.academic.awards %}
-
-<div class="zh post-container">
-  <section class="academic-section">
-    <h2>荣誉奖项</h2>
-    {% for item in awards %}
-    <article class="academic-card academic-card-inline">
-      <p class="academic-card-meta">{{ item.year }}</p>
-      <h3>{{ item.title_zh }}</h3>
-      <p{% if item.title_zh == "国家奖学金" or item.title_zh == "一等安雅奖学金" or item.title_zh == "一等人民奖学金" %} class="academic-award-note-emphasis"{% endif %}>{{ item.meta_zh }}</p>
-    </article>
+<section class="academic-section">
+  <h2>奖学金与荣誉 <span>Scholarships & Honors</span></h2>
+  <p>国家奖学金、人民奖学金等累计奖学金 2 万元以上；本科学分绩 92.268，综合排名 9/108。</p>
+  <ul class="academic-honors-list academic-honors-detailed">
+    {% for item in site.data.academic.awards %}
+    <li><div><h3>{{ item.title_zh }}</h3><p>{{ item.title_en }} · {{ item.meta_zh }}</p></div><span class="academic-date">{{ item.year }}</span></li>
     {% endfor %}
-  </section>
-</div>
-
-<div class="en post-container">
-  <section class="academic-section">
-    <h2>Honors and Awards</h2>
-    {% for item in awards %}
-    <article class="academic-card academic-card-inline">
-      <p class="academic-card-meta">{{ item.year }}</p>
-      <h3>{{ item.title_en }}</h3>
-      <p{% if item.title_zh == "国家奖学金" or item.title_zh == "一等安雅奖学金" or item.title_zh == "一等人民奖学金" %} class="academic-award-note-emphasis"{% endif %}>{{ item.meta_en }}</p>
-    </article>
-    {% endfor %}
-  </section>
-</div>
+  </ul>
+</section>
+<section class="academic-section">
+  <h2>竞赛获奖 <span>Competition Awards</span></h2>
+  {% for item in site.data.academic.competitions %}
+  <article class="academic-entry">
+    <div class="academic-entry-heading"><h3>{{ item.name_zh }}</h3><span class="academic-date">{{ item.period_zh }}</span></div>
+    <p><span class="academic-award">{{ item.award_zh }}</span> · {{ item.role }}</p>
+    <a href="{{ '/research/' | relative_url }}#{{ item.anchor }}">查看项目 <span aria-hidden="true">↗</span></a>
+  </article>
+  {% endfor %}
+</section>

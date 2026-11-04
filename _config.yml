@@ -1,11 +1,11 @@
 # Site settings
 title: Huaqiang Liu
-SEOTitle: 刘华强 | Robotics Portfolio
+SEOTitle: 刘华强 | Huaqiang Liu
 header-img: img/home-bg-art.jpg
 email: "liuhq317@163.com"
-description: "刘华强的个人主页，展示机器人相关项目经历、技术能力、荣誉奖项与求职信息。"
+description: "刘华强，哈尔滨工业大学控制科学与工程硕士生。关注机器人运动控制、动力学参数辨识与机器人操作。"
 keyword: "Huaqiang Liu, Robotics, ROS2, MoveIt2, Franka, UAV, Portfolio"
-url: "" # set your production host for absolute URL
+url: "https://huaqliu.github.io"
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
@@ -33,6 +33,7 @@ exclude:
     "package.json",
     "README.md",
     "README.zh.md",
+    "main0.pdf",
   ]
 anchorjs: true # if you want to customize anchor. check out line:181 of `post.html`
 # If you have timezone issue (e.g. #68) in China, uncomment to use this:
@@ -73,8 +74,8 @@ ga_track_id:
 ga_domain:
 
 # Sidebar settings
-sidebar: true # whether or not using Sidebar.
-sidebar-about-description: "机器人项目经历、技术能力、获奖情况与个人简介。"
+sidebar: false # Academic pages use a single reading column.
+sidebar-about-description: "机器人运动控制、动力学参数辨识与机器人操作。"
 sidebar-avatar: /photo.png
 
 # Featured Tags
@@ -82,7 +83,7 @@ featured-tags: false # whether or not using Feature-Tags
 featured-condition-size: 1 # A tag will be featured if the size of it is more than this condition value
 
 # Progressive Web Apps
-chrome-tab-theme-color: "#16324f"
+chrome-tab-theme-color: "#ffffff"
 service-worker: false
 
 # MathJax rendering for layout:page (e.g. post preview)

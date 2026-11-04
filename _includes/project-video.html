@@ -1,0 +1,8 @@
+<div class="academic-video-block js-video-container" id="{{ item.anchor }}-video" data-video-src="{{ item.video | relative_url }}" data-video-title="{{ item.name_zh | escape }}">
+  <button type="button" class="academic-video-preview js-load-video" aria-label="播放{{ item.name_zh }}演示视频">
+    <span class="academic-play-icon" aria-hidden="true">▷</span>
+    <span><strong>项目演示</strong><span class="academic-video-caption">点击加载视频</span></span>
+    <span class="academic-video-format" aria-hidden="true">MP4</span>
+  </button>
+  <noscript><p><a href="{{ item.video | relative_url }}">打开演示视频</a></p></noscript>
+</div>

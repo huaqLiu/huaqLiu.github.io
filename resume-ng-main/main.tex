@@ -1,0 +1,124 @@
+% !TeX TS-program = xelatex
+
+\documentclass{resume}
+\ResumeName{\songti  刘华强}
+% 如果想插入照片，请使用以下两个库。
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\definecolor{myblue}{RGB}{0,48,96}
+\definecolor{deepred}{RGB}{120,20,20}
+% \definecolor{myblue}{RGB}{0,0,0}
+% \definecolor{deepred}{RGB}{0,0,0}
+
+\begin{document}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=north east] at ([xshift=-0.6cm,yshift=-1.15cm]current page.north east) {
+    \includegraphics[width=2.4cm,height=3.2cm]{photo}
+  };
+\end{tikzpicture}
+\small
+\begin{flushleft}
+
+
+\ResumeContacts{\zihao{5}
+  15045468496,%
+  liuhq317@163.com,%
+  huaqliu.github.io
+}
+
+\ResumeTitle
+
+\vspace{0.8em}
+
+\textbf{哈尔滨工业大学}
+[\textnormal{航天学院｜控制科学与工程｜工学硕士 2026.09—2029.06}]
+
+\textbf{哈尔滨工业大学}
+[\textnormal{自动化｜工学学士 2022.08—2026.06}]
+
+
+\textbf{求职意向：}运动控制算法实习生\\
+\textbf{到岗安排：}随时到岗，每周到岗5天，可实习6个月以上。\\
+\textbf{本科学分绩：92.268}，\textbf{综合排名：9/108}，\textbf{国家奖学金、人民奖学金等累计奖学金2w+}
+
+\end{flushleft}
+
+
+\section{\textcolor{myblue}{实习经历}}
+
+\ResumeItem{\textbf{将闲科技（LiberAI）}}
+[\textcolor{deepred}{\ 机器人运动控制实习生}]
+[2026.05—2026.09]
+
+\begin{itemize}
+  \item \textbf{运控系统与动作部署：}负责\textbf{开发在线负载辨识系统}，参与\textbf{运动控制系统设计}与\textbf{双臂遥操作系统维护}，协同模型组开展上层模型的真机部署与联调，处理控制器参数、动作缓冲区、插值与滤波等问题，支持模型输出动作的安全、精确执行。
+  \item \textbf{底盘控制与真机联调：}完成 \textbf{Tidybot八电机舵轮底盘正、逆运动学解算、处理零力矩点}及\textbf{真机部署}，开展底层硬件与上层控制模块的联合调试。
+  \item \textbf{机器人建模与仿真：}参与 \textbf{Leo 机器人 URDF / MuJoCo} 模型调试，处理连杆惯性参数、关节坐标系、碰撞几何及网格模型（Mesh），支撑\textbf{运动学、动力学及碰撞}相关功能的仿真验证。
+\end{itemize}
+
+\section{\textcolor{myblue}{项目经历}}
+
+\ResumeItem{\textbf{机械臂在线负载辨识与动力学估计}}
+[\textcolor{deepred}{\ LiberAI开发任务}]
+[2026.05—2026.09]
+
+\begin{itemize}
+  \item[] \textbf{项目背景：}由于模型输出的 \textbf{Action Chunks} 为相对运动量，当运动量为零时，控制器进入\textbf{阻尼状态}，机械臂持续缓慢下垂。项目旨在通过\textbf{在线负载辨识}，为负载补偿提供参数依据。
+  \item \textbf{论文调研与方案选型：}检索并梳理机械臂动力学参数辨识与在线负载估计相关论文，对比 \textbf{RLS 与 MHE} 的建模假设、实时性及噪声鲁棒性，为在线辨识方案选型提供依据。
+  \item \textbf{在线负载估计：}开发基于\textbf{机器人动力学回归模型}、\textbf{凸优化理论}、\textbf{递推最小二乘（RLS）}与\textbf{滚动时域估计（MHE）}的在线负载辨识系统，无需运行专用辨识轨迹，利用任务执行中的反馈数据在后台实时估计末端负载。
+  \item \textbf{动力学参数辨识：}设计\textbf{摩擦力辨识与机械臂动力学参数辨识}方案，为在线负载估计提供模型基础，降低模型误差对辨识精度的影响。
+  \item \textbf{功能封装与接口设计：}将负载辨识算法封装为\textbf{可复用模块}，提供\textbf{状态输入与估计结果输出接口}，支持运控系统集成调用。
+  \item[] \textit{\textcolor{deepred}{技术栈：}动力学回归、RLS、MHE、摩擦辨识、在线参数估计、SDK封装。}
+\end{itemize}
+
+\ResumeItem{\textbf{基于视觉-语言大模型的机械臂智能抓取研究}}
+[\textcolor{deepred}{\ 本科毕业设计}]
+[2025.06—2026.04]
+
+\begin{itemize}
+  \item \textbf{系统搭建与任务流程：}基于 \textbf{Ubuntu、ROS2} 搭建 \textbf{Franka 七自由度机械臂}抓取系统，设计自然语言指令驱动的抓取流程，完成感知、规划与控制模块的集成与真机联调。
+  \item \textbf{运动规划与控制：}设计并应用\textbf{关节空间与笛卡尔空间阻抗控制}，完成目标抓取位姿到机械臂动作执行的控制流程。
+  \item \textbf{感知与抓取闭环：}集成 \textbf{Qwen3-VL、SAM、GraspNet}，实现指令理解、目标识别与定位、图像分割及抓取位姿生成，并对接机械臂控制模块，形成\textbf{自然语言指令到真机抓取执行}的完整闭环。
+  \item[] \textit{\textcolor{deepred}{技术栈：}ROS2、Franka、阻抗控制、Qwen3-VL、SAM、GraspNet。}
+\end{itemize}
+
+\section{\textcolor{myblue}{竞赛经历}}
+
+\ResumeItem{\textbf{RoboMaster 全国大学生机器人大赛}}
+[\textcolor{deepred}{\ 全国一等奖｜空中机器人组负责人}]
+[2023.08—2025.08][\small]
+
+\begin{itemize}
+  \item 实现无人机的飞控设计和结合激光雷达与 IMU 融合定位；负责三轴云台\textbf{PID 调参与视觉伺服}，实现高速移动目标稳定跟踪，并完成软硬件系统联调。
+  \item \textbf{整机设计：}推动机械、电控、视觉三个部分的协作，提出\textbf{结构电气等方案的改进建议}，并通过整机联调验证改进效果。
+\end{itemize}
+
+\ResumeItem{\textbf{中国大学生工程实践与创新能力大赛}}
+[\textcolor{deepred}{\ 全国一等奖｜队长}]
+[2025.01—2025.08][\small]
+
+\begin{itemize}
+  \item 实现\textbf{SCARA 机械臂与麦轮底盘协同控制}，独立设计整机\textbf{状态机与多阶段动作调度}，集成视觉定位与抓取执行，完成自动搬运流程及软硬件联调。
+\end{itemize}
+
+\ResumeItem{\textbf{全国大学生电子设计竞赛—无人机赛题}}
+[\textcolor{deepred}{\ 全国二等奖｜队长}]
+[2024.05—2025.08][\small]
+
+\begin{itemize}
+  \item \textbf{独立完成}四旋翼无人机控制开发、硬件集成与整机调试，负责\textbf{飞控多层 PID 参数整定、路径规划与任务调度}，结合视觉识别实现目标搜索与跟踪，提升飞行稳定性与任务执行精度。
+\end{itemize}
+
+
+\section{\textcolor{myblue}{技术能力}}
+\begin{itemize}
+  \item \textbf{编程与开发}: 熟悉 \textbf{C/C++}、\textbf{Python}，具备面向真实机器人系统的代码开发、调试与工程化实现经验。
+  \item \textbf{建模与运动控制}: 熟悉机械臂\textbf{运动学、坐标变换、逆运动学与轨迹规划}，具备 \textbf{URDF / MJCF} 模型调试、\textbf{关节空间 / 笛卡尔空间阻抗控制}及\textbf{多层 PID} 调参经验。
+  \item \textbf{机器人框架与联调}: 熟悉 \textbf{Ubuntu、ROS2、MoveIt2}，具备 \textbf{Franka} 机械臂、移动底盘与无人机的控制开发、软硬件联调及遥操作系统维护经验。
+  \item \textbf{嵌入式与任务控制}: 具备 \textbf{STM32、FreeRTOS} 开发经验，能够完成电机调试、状态机设计与多阶段动作调度。
+\end{itemize}
+
+\end{document}

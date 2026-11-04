@@ -1,131 +1,79 @@
 ---
 layout: page
-description: "Robotics portfolio, project experience, honors, and academic notes"
-header-bg-css: "#f7f4ef"
-header-mask: 0
+home: true
+description: "哈尔滨工业大学 · 机器人运动控制、动力学辨识与机器人操作"
 nav-style: "invert"
 no-catalog: true
 ---
 
 {% assign academic = site.data.academic %}
-{% assign profile = academic.profile %}
-{% assign bio = academic.bio %}
-{% assign awards = academic.awards %}
-{% assign projects = academic.projects %}
-{% assign summary = academic.summary %}
-{% assign contacts = academic.contacts %}
-
 <div class="home-academic">
-  <section class="academic-hero-card">
-    <div class="academic-hero-copy">
-      <p class="academic-kicker">{{ profile.title_en }}</p>
-      <h2>{{ profile.name_zh }}</h2>
-      <p class="academic-lead zh">{{ profile.hero_tagline_zh }}</p>
-      <p class="academic-meta-line zh">{{ profile.affiliation_zh }}</p>
-      <div class="academic-chip-list">
-        {% for interest in academic.research_interests.zh %}
-        <span class="academic-chip">{{ interest }}</span>
-        {% endfor %}
+  <section class="academic-section" aria-labelledby="about-heading">
+    <div class="academic-section-heading">
+      <h2 id="about-heading">个人简介 <span>About</span></h2>
+      <a href="{{ '/about/' | relative_url }}">更多信息 <span aria-hidden="true">↗</span></a>
+    </div>
+    <p>{{ academic.bio.summary_zh }}</p>
+    <p>{{ academic.bio.experience_zh }}</p>
+    <p class="academic-availability"><strong>实习意向</strong> {{ academic.profile.target_role }} · {{ academic.profile.availability }}</p>
+  </section>
+
+  <section class="academic-section" aria-labelledby="education-heading">
+    <div class="academic-section-heading"><h2 id="education-heading">教育经历 <span>Education</span></h2></div>
+    {% include education-list.html %}
+  </section>
+
+  <section class="academic-section" aria-labelledby="experience-heading">
+    <div class="academic-section-heading"><h2 id="experience-heading">实习经历 <span>Experience</span></h2></div>
+    {% for item in academic.experience %}
+    <article class="academic-entry">
+      <div class="academic-entry-heading"><h3>{{ item.organization }}</h3><span class="academic-date">{{ item.period }}</span></div>
+      <p class="academic-role">{{ item.role }}</p>
+      <p>{{ item.summary }}</p>
+      <a class="academic-text-link" href="{{ '/about/' | relative_url }}#experience">查看工作内容 <span aria-hidden="true">↗</span></a>
+    </article>
+    {% endfor %}
+  </section>
+
+  <section class="academic-section" aria-labelledby="projects-heading">
+    <div class="academic-section-heading">
+      <h2 id="projects-heading">代表项目 <span>Selected Projects</span></h2>
+      <a href="{{ '/research/' | relative_url }}">项目详情 <span aria-hidden="true">↗</span></a>
+    </div>
+    {% for item in academic.projects %}
+    <article class="academic-project-summary">
+      <div class="academic-entry-heading"><h3><a href="{{ '/research/' | relative_url }}#{{ item.anchor }}">{{ item.name_zh }}</a></h3><span class="academic-date">{{ item.period_zh }}</span></div>
+      <p class="academic-role">{{ item.category }}</p>
+      <p>{{ item.summary }}</p>
+      <p class="academic-tech">{{ item.technologies }}</p>
+      <div class="academic-link-row">
+        <a href="{{ '/research/' | relative_url }}#{{ item.anchor }}">项目详情 <span aria-hidden="true">↗</span></a>
+        {% if item.video %}<a href="{{ '/research/' | relative_url }}#{{ item.anchor }}-video">演示视频 <span aria-hidden="true">↗</span></a>{% endif %}
       </div>
-      <div class="academic-action-row">
-        <a class="academic-button academic-button-primary" href="{{ profile.cv_path | prepend: site.baseurl }}">下载简历</a>
-        <a class="academic-button" href="{{ '/research/' | prepend: site.baseurl }}">View Projects</a>
-      </div>
-    </div>
+    </article>
+    {% endfor %}
   </section>
 
-  <section class="academic-section">
-    <div class="academic-section-heading">
-      <h2>About</h2>
-      <a href="{{ '/about/' | prepend: site.baseurl }}">More</a>
-    </div>
-    <p>{{ bio.summary_zh }}</p>
+  <section class="academic-section" aria-labelledby="competitions-heading">
+    <div class="academic-section-heading"><h2 id="competitions-heading">竞赛经历 <span>Competitions</span></h2><a href="{{ '/research/' | relative_url }}#competitions">查看详情 <span aria-hidden="true">↗</span></a></div>
+    {% for item in academic.competitions %}
+    <article class="academic-competition-summary">
+      <div class="academic-entry-heading"><h3>{{ item.name_zh }}</h3><span class="academic-date">{{ item.period_zh }}</span></div>
+      <p><span class="academic-award">{{ item.award_zh }}</span><span class="academic-inline-separator">·</span>{{ item.role }}</p>
+    </article>
+    {% endfor %}
   </section>
 
-  <section class="academic-section">
-    <div class="academic-section-heading">
-      <h2>联系与总结</h2>
-      <a href="{{ '/videos/' | prepend: site.baseurl }}">查看详情</a>
-    </div>
-    <div class="academic-grid">
-      <article class="academic-card">
-        <h3>个人总结</h3>
-        {% for item in summary.zh limit:3 %}
-        <p>{{ item }}</p>
-        {% endfor %}
-      </article>
-      <article class="academic-card">
-        <h3>联系与求职信息</h3>
-        {% for item in contacts.zh %}
-        <p>
-          <strong>{{ item.label }}:</strong>
-          {% if item.url != "" %}
-          <a href="{{ item.url | prepend: site.baseurl }}">{{ item.value }}</a>
-          {% else %}
-          {{ item.value }}
-          {% endif %}
-        </p>
-        {% endfor %}
-      </article>
-    </div>
+  <section class="academic-section" aria-labelledby="honors-heading">
+    <div class="academic-section-heading"><h2 id="honors-heading">荣誉奖项 <span>Honors</span></h2><a href="{{ '/publications/' | relative_url }}">全部荣誉 <span aria-hidden="true">↗</span></a></div>
+    <ul class="academic-honors-list">
+      {% for item in academic.awards limit:3 %}<li><span>{{ item.title_zh }}</span><span class="academic-date">{{ item.year }}</span></li>{% endfor %}
+    </ul>
+    <p class="academic-muted">国家奖学金、人民奖学金等累计奖学金 2 万元以上。</p>
   </section>
 
-  <section class="academic-section">
-    <div class="academic-section-heading">
-      <h2>Technical Highlights</h2>
-      <a href="{{ '/about/' | prepend: site.baseurl }}">View Details</a>
-    </div>
-    <div class="academic-chip-list">
-      {% for interest in academic.research_interests.zh %}
-      <span class="academic-chip">{{ interest }}</span>
-      {% endfor %}
-    </div>
+  <section class="academic-section" aria-labelledby="skills-heading">
+    <div class="academic-section-heading"><h2 id="skills-heading">技术能力 <span>Technical Skills</span></h2></div>
+    {% include skills-list.html %}
   </section>
-
-  <section class="academic-section">
-    <div class="academic-section-heading">
-      <h2>Honors & Awards</h2>
-      <a href="{{ '/publications/' | prepend: site.baseurl }}">View Honors</a>
-    </div>
-    <div class="academic-grid">
-      {% for item in awards limit:3 %}
-      <article class="academic-card">
-        <p class="academic-card-meta">{{ item.year }}</p>
-        <h3>{{ item.title_zh }}</h3>
-        <p{% if item.title_zh == "国家奖学金" or item.title_zh == "一等安雅奖学金" or item.title_zh == "一等人民奖学金" %} class="academic-award-note-emphasis"{% endif %}>{{ item.meta_zh }}</p>
-      </article>
-      {% endfor %}
-    </div>
-  </section>
-
-  <section class="academic-section">
-    <div class="academic-section-heading">
-      <h2>项目经历</h2>
-      <a href="{{ '/research/' | prepend: site.baseurl }}">All Projects</a>
-    </div>
-    <div class="academic-grid">
-      {% for item in projects %}
-      <article class="academic-card">
-        <h3>{{ item.name_zh }}</h3>
-        <p class="academic-award-badge">{{ item.award_zh }}</p>
-        <p>{{ item.description_zh }}</p>
-        <p class="academic-meta">{{ item.period_zh }} · {{ item.related_publication }}</p>
-        {% if item.video %}
-        <a class="academic-video-preview" href="{{ '/research/' | prepend: site.baseurl }}#{{ item.anchor }}">
-          <span class="academic-video-preview-title">{{ item.preview_label_zh }}</span>
-          <span class="academic-video-preview-meta">点击进入项目页观看完整视频</span>
-        </a>
-        {% endif %}
-        {% if item.links %}
-        <div class="academic-link-row">
-          {% for link in item.links %}
-          <a href="{{ link.url | prepend: site.baseurl }}">{{ link.label }}</a>
-          {% endfor %}
-        </div>
-        {% endif %}
-      </article>
-      {% endfor %}
-    </div>
-  </section>
-
 </div>

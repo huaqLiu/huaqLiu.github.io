@@ -1,0 +1,5 @@
+<dl class="academic-skills">
+  {% for item in site.data.academic.skills %}
+  <div><dt>{{ item.label }}</dt><dd>{{ item.description }}</dd></div>
+  {% endfor %}
+</dl>

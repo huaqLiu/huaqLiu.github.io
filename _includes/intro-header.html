@@ -105,21 +105,29 @@
 {% endif %}
 
 {% if include.type == 'page' %}
-<header class="intro-header" {% if page.header-bg-css %}style="background: {{ page.header-bg-css }}"{% else %}style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')"{% endif %}>
-  <div class="header-mask"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        {% if include.short %}
-        <div class="site-heading" id="tag-heading">
-        {% else %}
-        <div class="site-heading">
-        {% endif %}
-          <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
-          <span class="subheading">{{ page.description }}</span>
+{% assign profile = site.data.academic.profile %}
+<header class="academic-header{% if page.home %} academic-header-home{% endif %}">
+  <div class="academic-shell">
+    {% if page.home %}
+    <div class="academic-identity">
+      <div class="academic-identity-copy">
+        <p class="academic-eyebrow" lang="en">{{ profile.title_en }}</p>
+        <h1>{{ profile.name_zh }} <span lang="en">{{ profile.name_en }}</span></h1>
+        <p class="academic-affiliation">{{ profile.affiliation_zh }}<br><span lang="en">{{ profile.affiliation_en }}</span></p>
+        <p class="academic-interests">{{ profile.hero_tagline_zh }}</p>
+        <div class="academic-identity-links">
+          <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+          <a href="{{ profile.cv_path | relative_url }}">简历 / CV <span aria-hidden="true">↗</span></a>
+          <a href="{{ '/about/' | relative_url }}#contact">联系 <span aria-hidden="true">↗</span></a>
         </div>
       </div>
+      <img class="academic-portrait" src="{{ profile.avatar | relative_url }}" alt="刘华强的个人照片" width="138" height="178" fetchpriority="high">
     </div>
+    {% else %}
+    <p class="academic-eyebrow">{{ page.subtitle }}</p>
+    <h1 lang="en">{{ page.title }}</h1>
+    <p class="academic-page-description">{{ page.description }}</p>
+    {% endif %}
   </div>
 </header>
 {% endif %}

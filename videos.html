@@ -1,38 +1,17 @@
 ---
 layout: page
-title: "Profile"
-description: "Personal summary, job intent, and contact details"
-header-bg-css: "#eef4f7"
-header-mask: 0
+title: "Contact"
+subtitle: "联系与简历"
+description: "运动控制算法实习意向与联系方式"
 nav-style: "invert"
 no-catalog: true
 ---
-
-{% assign summary = site.data.academic.summary %}
-{% assign contacts = site.data.academic.contacts %}
-
-<div class="post-container">
-  <section class="academic-section">
-    <h2>Profile Summary</h2>
-    <ul class="academic-contact-list">
-      {% for item in summary.zh %}
-      <li>{{ item }}</li>
-      {% endfor %}
-    </ul>
-  </section>
-
-  <section class="academic-section">
-    <h2>Contact and Availability</h2>
-    <ul class="academic-contact-list">
-      {% for item in contacts.zh %}
-      <li>
-        {% if item.url != "" %}
-        <a href="{{ item.url | prepend: site.baseurl }}">{{ item.label }}</a> · {{ item.value }}
-        {% else %}
-        {{ item.label }} · {{ item.value }}
-        {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
-</div>
+<section class="academic-section">
+  <h2>联系信息 <span>Contact</span></h2>
+  <p>目前在哈尔滨工业大学攻读控制科学与工程硕士学位，寻找运动控制算法实习机会。欢迎通过邮件联系。</p>
+  {% include contact-details.html %}
+</section>
+<section class="academic-section">
+  <h2>项目材料 <span>Materials</span></h2>
+  <p><a href="{{ '/research/' | relative_url }}">项目经历与演示视频 <span aria-hidden="true">↗</span></a></p>
+</section>
