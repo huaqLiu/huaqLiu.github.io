@@ -15,14 +15,14 @@
 
 {% unless page.layout == 'page' %}
 <!-- jQuery -->
-<script src="{{ '/js/jquery.min.js' | relative_url }}"></script>
+<script src="{% include versioned-url.html path='/js/jquery.min.js' %}"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
-<script src="{{ '/js/bootstrap.min.js' | relative_url }}"></script>
+<script src="{% include versioned-url.html path='/js/bootstrap.min.js' %}"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="{{ '/js/hux-blog.min.js' | relative_url }}"></script>
+<script src="{% include versioned-url.html path='/js/hux-blog.min.js' %}"></script>
 
 <!-- async load function -->
 <script>

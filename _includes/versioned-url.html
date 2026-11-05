@@ -1,0 +1,3 @@
+{%- comment -%}A stable version per build lets updated resources bypass older cached copies.{%- endcomment -%}
+{%- assign resource_version = site.time | date: '%Y%m%d%H%M%S' -%}
+{{- include.path | relative_url -}}?v={{- resource_version -}}

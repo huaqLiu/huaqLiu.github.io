@@ -117,11 +117,11 @@
         <p class="academic-interests">{{ profile.hero_tagline_zh }}</p>
         <div class="academic-identity-links">
           <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>
-          <a href="{{ profile.cv_path | relative_url }}">简历 / CV <span aria-hidden="true">↗</span></a>
+          <a href="{% include versioned-url.html path=profile.cv_path %}">简历 / CV <span aria-hidden="true">↗</span></a>
           <a href="{{ '/about/' | relative_url }}#contact">联系 <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <img class="academic-portrait" src="{{ profile.avatar | relative_url }}" alt="刘华强的个人照片" width="138" height="178" fetchpriority="high">
+      <img class="academic-portrait" src="{% include versioned-url.html path=profile.avatar %}" alt="刘华强的个人照片" width="138" height="178" fetchpriority="high">
     </div>
     {% else %}
     <p class="academic-eyebrow">{{ page.subtitle }}</p>

@@ -4,12 +4,12 @@
   <h5><a href="{{'/about/' | prepend: site.baseurl }}">ABOUT ME</a></h5>
   <div class="short-about">
     {% if site.sidebar-avatar %}
-    <img src="{{site.sidebar-avatar}}" />
+    <img src="{% include versioned-url.html path=site.sidebar-avatar %}" />
     {% endif %}
     <p><strong>{{ profile.name_zh }}</strong></p>
     <p>{{ site.sidebar-about-description }}</p>
     <p>{{ profile.affiliation_zh }}</p>
-    <p><a href="{{ profile.cv_path | prepend: site.baseurl }}">下载简历</a></p>
+    <p><a href="{% include versioned-url.html path=profile.cv_path %}">下载简历</a></p>
     <!-- SNS Link -->
     {% include sns-links.html %}
   </div>
