@@ -17,7 +17,7 @@ no-catalog: true
     <p class="academic-project-english" lang="en">{{ item.name_en }}</p>
     {% if item.background %}<p>{{ item.background }}</p>{% endif %}
     <ul class="academic-detail-list">{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul>
-    <p class="academic-tech">{{ item.technologies }}</p>
+    <p class="academic-tech">技术栈：{{ item.technologies }}</p>
     {% if item.video %}{% include project-video.html %}{% endif %}
   </article>
   {% endfor %}
@@ -28,9 +28,8 @@ no-catalog: true
   <article class="academic-project-detail" id="{{ item.anchor }}">
     <div class="academic-entry-heading"><h3>{{ item.name_zh }}</h3><span class="academic-date">{{ item.period_zh }}</span></div>
     <p class="academic-role"><span class="academic-award">{{ item.award_zh }}</span> · {{ item.role }}</p>
-    <p>{{ item.summary }}</p>
-    {% for detail in item.details %}<p>{{ detail }}</p>{% endfor %}
-    <p class="academic-tech">{{ item.technologies }}</p>
+    <ul class="academic-detail-list">{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul>
+    <p class="academic-tech">技术栈：{{ item.technologies }}</p>
     {% include project-video.html %}
   </article>
   {% endfor %}

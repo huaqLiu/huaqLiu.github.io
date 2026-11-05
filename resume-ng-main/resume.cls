@@ -111,8 +111,8 @@
   \begin{center}
     \zihao{-2} \heiti \g__resume_title_name_tl
   \end{center}
-  % Reduce the space.
-  \vspace{-1.4em}
+  % Keep a visible gap between the name and the contact line.
+  \vspace{-0.4em}
   \begin{center}
     \seq_use:Nnnn \g__resume_contacts_seq {~|~} {~|~} {~|~}
   \end{center}

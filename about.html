@@ -23,6 +23,7 @@ no-catalog: true
     <div class="academic-entry-heading"><h3>{{ item.organization }}</h3><span class="academic-date">{{ item.period }}</span></div>
     <p class="academic-role">{{ item.role }}</p>
     <ul class="academic-detail-list">{% for detail in item.details %}<li>{{ detail }}</li>{% endfor %}</ul>
+    {% if item.technologies %}<p class="academic-tech">技术栈：{{ item.technologies }}</p>{% endif %}
   </article>
   {% endfor %}
 </section>

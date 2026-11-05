@@ -30,6 +30,7 @@ no-catalog: true
       <div class="academic-entry-heading"><h3>{{ item.organization }}</h3><span class="academic-date">{{ item.period }}</span></div>
       <p class="academic-role">{{ item.role }}</p>
       <p>{{ item.summary }}</p>
+      {% if item.technologies %}<p class="academic-tech">技术栈：{{ item.technologies }}</p>{% endif %}
       <a class="academic-text-link" href="{{ '/about/' | relative_url }}#experience">查看工作内容 <span aria-hidden="true">↗</span></a>
     </article>
     {% endfor %}
@@ -45,7 +46,7 @@ no-catalog: true
       <div class="academic-entry-heading"><h3><a href="{{ '/research/' | relative_url }}#{{ item.anchor }}">{{ item.name_zh }}</a></h3><span class="academic-date">{{ item.period_zh }}</span></div>
       <p class="academic-role">{{ item.category }}</p>
       <p>{{ item.summary }}</p>
-      <p class="academic-tech">{{ item.technologies }}</p>
+      <p class="academic-tech">技术栈：{{ item.technologies }}</p>
       <div class="academic-link-row">
         <a href="{{ '/research/' | relative_url }}#{{ item.anchor }}">项目详情 <span aria-hidden="true">↗</span></a>
         {% if item.video %}<a href="{{ '/research/' | relative_url }}#{{ item.anchor }}-video">演示视频 <span aria-hidden="true">↗</span></a>{% endif %}
@@ -60,6 +61,7 @@ no-catalog: true
     <article class="academic-competition-summary">
       <div class="academic-entry-heading"><h3>{{ item.name_zh }}</h3><span class="academic-date">{{ item.period_zh }}</span></div>
       <p><span class="academic-award">{{ item.award_zh }}</span><span class="academic-inline-separator">·</span>{{ item.role }}</p>
+      <p class="academic-competition-description">{{ item.summary }}</p>
     </article>
     {% endfor %}
   </section>
