@@ -43,6 +43,10 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
     <!-- Bootstrap Core CSS -->
+    {% if page.layout == 'page' %}
+    <!-- Resolve the theme before loading styles to avoid a light-mode flash. -->
+    <script src="{{ '/js/theme.js' | relative_url }}"></script>
+    {% endif %}
     <link rel="stylesheet" href="{{ '/css/bootstrap.min.css' | relative_url }}">
 
     <!-- Custom CSS -->
