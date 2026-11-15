@@ -17,7 +17,7 @@ profile:
 
 bio:
   summary_zh: "我是刘华强，目前在哈尔滨工业大学航天学院攻读控制科学与工程硕士学位，本科毕业于哈尔滨工业大学自动化专业。我的兴趣主要集中在机器人运动控制、动力学参数辨识与机器人操作，关注算法在真实机器人系统中的实现与验证。"
-  experience_zh: "曾在将闲科技（LiberAI）担任机器人运动控制实习生，开发机械臂在线负载辨识系统，完成 Tidybot 舵轮底盘运动学解算与真机部署，负责 Leo 机器人模型构建与校正，并参与双臂遥操作维护及模型动作部署。本科期间完成了基于视觉语言大模型的 Franka 机械臂抓取系统，积累了阻抗控制、力位混合控制与感知控制闭环集成经验。"
+  experience_zh: "曾在将闲科技（LiberAI）担任机器人运动控制实习生，开发机械臂在线负载辨识系统，完成 Tidybot 舵轮底盘运动学解算与真机部署，负责 Leo 机器人模型构建与校正，并参与双臂遥操作维护及模型动作部署。本科期间完成了基于视觉语言大模型的 Franka 机械臂抓取系统，积累了阻抗控制、力位混合控制与感知控制闭环集成经验。了解 Diffusion Policy 训练与 Residual RL 策略微调方法，具备数据采集、模型训练、参数调试及真机部署经验。"
 
 education:
   - school_zh: "哈尔滨工业大学"
@@ -52,7 +52,7 @@ experience:
       - "运控系统与动作部署：负责开发在线负载辨识系统，参与运动控制系统设计与双臂遥操作系统维护；协同模型组开展上层模型的真机部署与联调，处理控制器参数、动作缓冲区、插值与滤波等问题，支持遥操作与模型输出动作的安全、精确执行。"
       - "底盘控制与真机联调：完成 Tidybot 八电机舵轮底盘正、逆运动学解算、零力矩点处理及真机部署，开展底层硬件与上层控制模块联合调试，并将功能封装为 SDK 便于调用。"
       - "机器人建模与参数校正：负责 Leo 机器人 URDF / MJCF 模型构建与校正，完成连杆质量与惯性参数、关节坐标系、碰撞几何等模型配置及调试，支撑机器人运动学、动力学与碰撞仿真验证。"
-    technologies: "运动控制 · 在线负载辨识 · 底盘运动学 · 双臂遥操作 · URDF / MJCF · MuJoCo · SDK 封装"
+    technologies: "运动控制 · 在线负载辨识 · 底盘运动学 · 双臂遥操作 · URDF / MJCF · MuJoCo · Pinocchio · SDK 封装"
 
 projects:
   - name_zh: "机械臂在线负载辨识与动力学估计"
@@ -73,12 +73,12 @@ projects:
     name_en: "Vision-Language-Guided Robotic Grasping"
     category: "本科毕业设计"
     period_zh: "2025.06 — 2026.04"
-    summary: "在 Franka 七自由度机械臂上集成 Qwen3-VL、SAM 与 GraspNet，结合阻抗控制与力位混合控制，完成从自然语言指令、目标感知、抓取位姿生成到真机执行的闭环。"
+    summary: "在 Franka 七自由度机械臂上集成 Qwen3-VL、SAM 与 GraspNet，结合阻抗控制与力位混合控制，完成从自然语言指令到真机抓取执行的闭环。了解 Diffusion Policy 训练与 Residual RL 策略微调方法，具备数据采集、模型训练、参数调试及真机部署经验。"
     details:
-      - "基于 Ubuntu 与 ROS2 搭建 Franka 机械臂抓取系统，设计自然语言指令驱动的任务流程，完成感知、规划与控制模块集成及真机联调。"
-      - "设计并应用关节空间与笛卡尔空间阻抗控制、力位混合控制，完成目标抓取位姿到机械臂动作执行的控制流程。"
-      - "集成 Qwen3-VL、SAM 与 GraspNet，实现指令理解、目标识别与定位、图像分割和抓取位姿生成，并对接机械臂控制模块。"
-    technologies: "ROS2 · Franka · 阻抗控制 · 力位混合控制 · VLM（Qwen3-VL）· SAM · GraspNet"
+      - "系统搭建与运动控制：基于 Ubuntu 与 ROS2 搭建 Franka 七自由度机械臂抓取系统，设计并应用关节空间与笛卡尔空间阻抗控制、力位混合控制，完成目标抓取位姿到机械臂动作执行的控制流程。"
+      - "感知与抓取闭环：集成 Qwen3-VL、SAM 与 GraspNet，实现指令理解、目标识别与定位、图像分割及抓取位姿生成，并对接机械臂控制模块，形成自然语言指令到真机抓取执行的完整闭环。"
+      - "BC 与 RL：了解 Diffusion Policy 训练流程与 Residual RL 策略微调方法，能够阅读并理解相关论文，具备数据采集、模型训练、参数调试及真机部署经验。"
+    technologies: "ROS2 · Franka · 阻抗控制 · 力位混合控制 · VLM（Qwen3-VL）· SAM · GraspNet · Diffusion Policy（DP）· Residual RL"
     video: "/毕业设计抓取视频.mp4"
     anchor: "grasping"
     featured: true
@@ -88,12 +88,12 @@ competitions:
     role: "空中机器人组负责人"
     award_zh: "全国一等奖"
     period_zh: "2023.08 — 2025.08"
-    summary: "负责全赛季无人机系统研发与制作，统筹机械、电控、视觉模块协作，完成飞控设计、融合定位及三轴云台目标跟踪。"
+    summary: "负责全赛季无人机系统研发与制作，统筹机械、电控、视觉模块协作，完成飞控设计、激光雷达定位及三轴云台目标跟踪。"
     details:
       - "研发统筹：负责全赛季无人机系统研发与制作，协调机械、电控与视觉模块协同开发，推进系统集成与整机联调。"
-      - "飞控与定位：完成无人机飞控设计与参数调试，结合激光雷达与 IMU 实现融合定位。"
+      - "飞控与定位：完成无人机飞控设计与参数调试，结合激光雷达实现定位。"
       - "云台控制：负责三轴云台 PID 调参与视觉伺服，实现对高速移动目标的稳定跟踪。"
-    technologies: "飞控设计与调参 · 激光雷达 / IMU · PID · 视觉伺服 · 系统集成"
+    technologies: "飞控设计与调参 · 激光雷达定位 · PID · 视觉伺服 · 系统集成"
     video: "/Robomaster.mp4"
     anchor: "robomaster"
   - name_zh: "中国大学生工程实践与创新能力大赛"
@@ -127,7 +127,7 @@ skills:
   - label: "编程与工程开发"
     description: "熟悉 C/C++、Python，具备机器人控制算法开发、SDK 接口封装、软硬件联调及机器人系统工程化实现经验。"
   - label: "机器人平台与仿真"
-    description: "熟悉 Ubuntu、ROS2、MoveIt2、MuJoCo，具备 Franka 机械臂、移动底盘的建模、仿真及控制开发经验；了解 STM32、FreeRTOS 嵌入式开发。"
+    description: "熟悉 Ubuntu、ROS2、MuJoCo、Pinocchio，具备 Franka 机械臂、移动底盘的建模、仿真及控制开发经验；了解 STM32、FreeRTOS 嵌入式开发。"
 
 # Existing scholarship and honor records retained from the previous homepage.
 awards:
