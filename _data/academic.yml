@@ -17,7 +17,7 @@ profile:
 
 bio:
   summary_zh: "我是刘华强，目前在哈尔滨工业大学航天学院攻读控制科学与工程硕士学位，本科毕业于哈尔滨工业大学自动化专业。我的兴趣主要集中在机器人运动控制、动力学参数辨识与机器人操作，关注算法在真实机器人系统中的实现与验证。"
-  experience_zh: "曾在将闲科技（LiberAI）担任机器人运动控制实习生，开发机械臂在线负载辨识系统，完成 Tidybot 舵轮底盘运动学解算与真机部署，负责 Leo 机器人模型构建与校正，并参与双臂遥操作维护及模型动作部署。本科期间完成了基于视觉语言大模型的 Franka 机械臂抓取系统，积累了阻抗控制、力位混合控制与感知控制闭环集成经验。了解 Diffusion Policy 训练与 Residual RL 策略微调方法，具备数据采集、模型训练、参数调试及真机部署经验。"
+  experience_zh: "曾在将闲科技（LiberAI）担任机器人运动控制实习生，开发机械臂在线负载辨识系统，完成 Tidybot 舵轮底盘运动学解算与真机部署，负责 Leo 机器人模型构建与校正，并参与双臂遥操作维护及模型动作部署。本科期间完成了基于视觉语言大模型的 Franka 机械臂抓取系统，积累了阻抗控制、力位混合控制与感知控制闭环集成经验。研读 DP、ACT、DICE-RL、ResFiT、ResiP、HIL-SERL 等前沿工作，熟悉 BC、Residual RL、RLPD 及人机在环强化学习等方法，重点关注高精度接触操作与 BC 策略的强化学习优化，具备数据采集、模型训练、参数调试及真机部署经验。"
 
 education:
   - school_zh: "哈尔滨工业大学"
@@ -73,12 +73,12 @@ projects:
     name_en: "Vision-Language-Guided Robotic Grasping"
     category: "本科毕业设计"
     period_zh: "2025.06 — 2026.04"
-    summary: "在 Franka 七自由度机械臂上集成 Qwen3-VL、SAM 与 GraspNet，结合阻抗控制与力位混合控制，完成从自然语言指令到真机抓取执行的闭环。了解 Diffusion Policy 训练与 Residual RL 策略微调方法，具备数据采集、模型训练、参数调试及真机部署经验。"
+    summary: "在 Franka 七自由度机械臂上集成 Qwen3-VL、SAM 与 GraspNet，结合阻抗控制与力位混合控制，完成从自然语言指令到真机抓取执行的闭环。研读 DP、ACT、DICE-RL、ResFiT、ResiP、HIL-SERL 等前沿工作，熟悉 BC、Residual RL、RLPD 及人机在环强化学习等方法，重点关注高精度接触操作与 BC 策略的强化学习优化，具备数据采集、模型训练、参数调试及真机部署经验。"
     details:
       - "系统搭建与运动控制：基于 Ubuntu 与 ROS2 搭建 Franka 七自由度机械臂抓取系统，设计并应用关节空间与笛卡尔空间阻抗控制、力位混合控制，完成目标抓取位姿到机械臂动作执行的控制流程。"
       - "感知与抓取闭环：集成 Qwen3-VL、SAM 与 GraspNet，实现指令理解、目标识别与定位、图像分割及抓取位姿生成，并对接机械臂控制模块，形成自然语言指令到真机抓取执行的完整闭环。"
-      - "BC 与 RL：了解 Diffusion Policy 训练流程与 Residual RL 策略微调方法，能够阅读并理解相关论文，具备数据采集、模型训练、参数调试及真机部署经验。"
-    technologies: "ROS2 · Franka · 阻抗控制 · 力位混合控制 · VLM（Qwen3-VL）· SAM · GraspNet · Diffusion Policy（DP）· Residual RL"
+      - "BC 与 RL：研读 DP、ACT、DICE-RL、ResFiT、ResiP、HIL-SERL 等前沿工作，熟悉 BC、Residual RL、RLPD 及人机在环强化学习等方法，重点关注高精度接触操作与 BC 策略的强化学习优化。具备数据采集、模型训练、参数调试及真机部署经验。"
+    technologies: "ROS2 · Franka · 阻抗控制 · 力位混合控制 · VLM（Qwen3-VL）· SAM · GraspNet · Diffusion Policy（DP）· ACT · BC · Residual RL · RLPD · 人机在环强化学习"
     video: "/毕业设计抓取视频.mp4"
     anchor: "grasping"
     featured: true
